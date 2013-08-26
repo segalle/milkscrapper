@@ -1,6 +1,9 @@
 # -*- coding: utf8 -*-
-import unittest
 import milk
+import os.path
+import shutil
+import tempfile
+import unittest
 
 
 class Test(unittest.TestCase):
@@ -82,6 +85,21 @@ class Test(unittest.TestCase):
         self.assertIsInstance(station, dict)
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
+
+    def test_save_station_to_file(self):
+        url = milk.get_url(2)
+        html = milk.get_full_html(url)
+        table = milk.extract_stations_table(html)
+        rows = milk.extract_station_rows(table)
+        row = rows[0]
+        station = milk.extract_station_from_row(row)
+        path = tempfile.mkdtemp()
+        try:
+            milk.save_station_to_json_file(path, station)
+            filename = os.path.join(path, "%d.json" % station['id'])
+            self.assertTrue(os.path.exists(filename))
+        finally:
+            shutil.rmtree(path)
 
 
 if __name__ == "__main__":
