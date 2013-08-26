@@ -6,6 +6,8 @@ import requests
 from lxml import etree
 import json
 import os
+import tempfile
+import urllib2
 
 
 def get_url(page):
@@ -70,3 +72,24 @@ def save_station_from_page(path, page):
 
     return countfiles
 
+def save_station_from_all_pages(path,maxpages):
+    """ max pages = max numner of pages on site"""
+    for page in range(1,maxpages+1):
+        save_station_from_page(path, page)
+
+
+def address_to_latlong (address, path, station_id):
+    location_url = "http://maps.googleapis.com/maps/api/geocode/json?address={0}&sensor=false".format(address);
+    data = urllib2.urlopen(location_url)
+    
+    j = json.load(data)
+    l = json.dumps(j)
+    
+    lat = j['results'][0]['geometry']['location']['lat']
+    lng = j['results'][0]['geometry']['location']['lng']
+    filename = "{0}lat{1}long{2}".format(station_id,lat,lng)
+    fullfilepath = os.path.join(path, "%s.json" % filename)
+    with open(fullfilepath, 'w') as file:
+        file.write(json.dumps(l))
+    
+   
