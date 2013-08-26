@@ -24,3 +24,8 @@ def extract_stations_table(url):
 def extract_station_rows(table):
     pass
 
+    
+def extract_station_from_row(row):
+    pass
+
+
