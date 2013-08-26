@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 """
 Gets information about Tipat Halav stations
 """
@@ -28,7 +29,6 @@ def extract_station_rows(table):
 
     
 def extract_station_from_row(row):
-    #print etree.tostring(row[0])
     tds = row[0].xpath('td')
     d= {}
     d['id'] = int(row[0].get("id")[-3:])
@@ -38,6 +38,12 @@ def extract_station_from_row(row):
     d['owner'] = tds[4].xpath("string()")
     d['notes'] = tds[5].xpath("string()").strip()  
     d['days'] = [x.xpath("string()").strip() for x in row[1].xpath('.//table')[0].xpath('tr[position() >1 ]/td')[1::2]]
+    d['district'] = row[1].xpath('.//table')[1].xpath('tr')[0].xpath('td')[1].xpath("string()").strip()
+    row_subdistrict = row[1].xpath('.//table')[1].xpath('tr')[1]
+    if row_subdistrict.xpath('td')[0].xpath("string()").strip() != u":נפה":
+        d['subdistrict'] = ""
+    else:
+        d['subdistrict'] = row_subdistrict.xpath('td')[1].xpath("string()")
     
     return d
 

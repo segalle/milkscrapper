@@ -37,6 +37,7 @@ class Test(unittest.TestCase):
         for row in rows:
             self.assertEquals(2, len(row))
 
+
     def test_extract_station_from_row(self):
 
         url = milk.get_url(1)
