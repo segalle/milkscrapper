@@ -54,3 +54,9 @@ def save_station_to_json_file(path, station):
 
 def save_station_from_page(path, page):
     assert False
+
+
+def download_all_stations(path):
+    assert False
+
+

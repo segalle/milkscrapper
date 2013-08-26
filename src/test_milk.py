@@ -116,6 +116,19 @@ class Test(unittest.TestCase):
         finally:
             shutil.rmtree(path)
 
+    def test_download_all_stations(self):
+        path = tempfile.mkdtemp()
+        try:
+            stations = milk.download_all_stations(path)
+            files = glob.glob(os.path.join(path, "*.json"))
+            self.assertEquals(stations, len(files))
+            for filename in files:
+                with open(filename) as f:
+                    d = json.load(f)
+                    self.assertEquals(os.path.join(path, ".json" % d['id']), filename)
+        finally:
+            shutil.rmtree(path)
+
 
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testName']
