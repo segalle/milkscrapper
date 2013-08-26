@@ -50,3 +50,7 @@ def extract_station_from_row(row):
 
 def save_station_to_json_file(path, station):
     pass
+
+
+def save_station_from_page(path, page):
+    assert False
