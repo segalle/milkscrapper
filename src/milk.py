@@ -28,3 +28,8 @@ def extract_station_rows(table):
     tuple_list = zip(odd_rows,duble_rows)
     return tuple_list
 
+    
+def extract_station_from_row(row):
+    pass
+
+
