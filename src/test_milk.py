@@ -36,8 +36,6 @@ class Test(unittest.TestCase):
         self.assertEquals(15, len(rows))
         for row in rows:
             self.assertEquals(2, len(row))
-            self.assertEquals(row[0].get('class'), "zbTRBlue zebraPhone")
-            self.assertEquals(row[0].get('class'), "zbTRBlue zebraPhone")
 
     def test_extract_station_from_row(self):
 
