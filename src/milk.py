@@ -4,6 +4,7 @@ Gets information about Tipat Halav stations
 """
 import requests
 from lxml import etree
+import json
 
 
 def get_url(page):
@@ -43,8 +44,20 @@ def extract_station_from_row(row):
     if row_subdistrict.xpath('td')[0].xpath("string()").strip() != u":נפה":
         d['subdistrict'] = ""
     else:
-        d['subdistrict'] = row_subdistrict.xpath('td')[1].xpath("string()")
+        d['subdistrict'] = row_subdistrict.xpath('td')[1].xpath("string()") 
     
     return d
 
+def downloadpage(path, pagenum):
+    url = get_url(pagenum)
+    html = get_full_html(url)
+    table = extract_stations_table(html)
+    rows = extract_station_rows(table)
+    
+    row = rows[9]
+    
+    
+    print json.dumps(extract_station_from_row(row))
+    
 
+downloadpage("x",1)
