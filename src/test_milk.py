@@ -44,10 +44,13 @@ class Test(unittest.TestCase):
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
 
-        row = rows[0]
+        row = rows[9]
         station = milk.extract_station_from_row(row)
         self.assertIsInstance(station, dict)
-        self.assertEquals(u"אבו גוש", station['city'])
+        self.assertEquals(u"אבשלום", station['city'])
+        self.assertEquals(u"ד.נ. הנגב 85488", station['address'])
+        self.assertEquals(u"מרכז אבשלום", station['name'])
+        self.assertEquals(u"קופת חולים כללית", station['owner'])
 
 
 if __name__ == "__main__":
