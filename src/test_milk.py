@@ -36,6 +36,8 @@ class Test(unittest.TestCase):
         self.assertEquals(15, len(rows))
         for row in rows:
             self.assertEquals(2, len(row))
+            self.assertEquals(row[0].get('class'), "zbTRBlue zebraPhone")
+            self.assertEquals(row[0].get('class'), "zbTRBlue zebraPhone")
 
     def test_extract_station_from_row(self):
 
@@ -52,6 +54,8 @@ class Test(unittest.TestCase):
         self.assertEquals(u"מרכז אבשלום", station['name'])
         self.assertEquals(u"קופת חולים כללית", station['owner'])
         self.assertEquals(u"", station['notes'])
+        self.assertEquals(u"דרום", station['district'])
+        self.assertEquals(u"", station['subdistrict'])
 
         row = rows[0]
         station = milk.extract_station_from_row(row)
@@ -64,6 +68,17 @@ class Test(unittest.TestCase):
         self.assertEqual("8:00-14:30", station['days'][3])
         self.assertEqual("סגור", station['days'][4])
         self.assertEqual("סגור", station['days'][5])
+        self.assertEquals(u"ירושלים", station['district'])
+        self.assertEquals(u"ירושלים", station['subdistrict'])
+
+        url = milk.get_url(2)
+        html = milk.get_full_html(url)
+        table = milk.extract_stations_table(html)
+        rows = milk.extract_station_rows(table)
+        row = rows[0]
+        station = milk.extract_station_from_row(row)
+        self.assertIsInstance(station, dict)
+        self.assertEquals(u"אום אלפחם ב", station['name'])
 
 
 if __name__ == "__main__":
