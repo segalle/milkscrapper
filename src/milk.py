@@ -13,3 +13,9 @@ def get_full_html(url):
 
 def extract_stations_table(url):
     pass
+
+
+def extract_station_rows(table):
+    pass
+
+
