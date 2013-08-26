@@ -1,21 +1,26 @@
 """
-Gets information about Tipat Halav offices
+Gets information about Tipat Halav stations
 """
+import requests
+from lxml import etree
 
 
 def get_url(page):
-    pass
+    url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % page
+    return url
 
 
 def get_full_html(url):
-    pass
+    html = requests.get(url)
+    return html.text
 
 
 def extract_stations_table(url):
-    pass
+    html = etree.HTML(url)
+    table = html.xpath('//*[@class="cqwpGridViewTable cqwpGridViewTableFullVaccines PaymentsGridViewGroup"]')[0];
+    return table
 
 
 def extract_station_rows(table):
     pass
-
 
