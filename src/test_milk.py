@@ -1,4 +1,5 @@
 # -*- coding: utf8 -*-
+import json
 import milk
 import os.path
 import shutil
@@ -96,6 +97,8 @@ class Test(unittest.TestCase):
             milk.save_station_to_json_file(path, station)
             filename = os.path.join(path, "%d.json" % station['id'])
             self.assertTrue(os.path.exists(filename))
+            with open(filename) as f:
+                self.assertEquals(station, json.load(f))
         finally:
             shutil.rmtree(path)
 
