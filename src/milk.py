@@ -31,6 +31,7 @@ def extract_station_from_row(row):
     #print etree.tostring(row[0])
     tds = row[0].xpath('td')
     d= {}
+    d['id'] = int(row[0].get("id")[-3:])
     d['city'] = tds[0].xpath("string()")
     d['address'] = tds[1].xpath("string()")
     d['name'] = tds[2].xpath("string()")
