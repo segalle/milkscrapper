@@ -5,6 +5,7 @@ Gets information about Tipat Halav stations
 import requests
 from lxml import etree
 import json
+import os
 
 
 def get_url(page):
@@ -49,20 +50,12 @@ def extract_station_from_row(row):
     return d
 
 def save_station_to_json_file(path, station):
-    url = get_url(station)
-    html = get_full_html(url)
-    table = extract_stations_table(html)
-    rows = extract_station_rows(table)
-    
-    row = rows[9]
-    
-    
-    print json.dumps(extract_station_from_row(row))
+    fullfilepath = os.path.join(path, "%d.json" % station['id'])
+    file = open(fullfilepath, 'w')
+    file.write(json.dumps(station))
     pass
 
-<<<<<<< HEAD
-=======
 
 def save_station_from_page(path, page):
-    assert False
->>>>>>> udi/master
+    return False
+
