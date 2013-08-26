@@ -60,3 +60,9 @@ def save_station_to_json_file(path, station):
     print json.dumps(extract_station_from_row(row))
     pass
 
+<<<<<<< HEAD
+=======
+
+def save_station_from_page(path, page):
+    assert False
+>>>>>>> udi/master

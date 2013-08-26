@@ -1,4 +1,13 @@
 # -*- coding: utf8 -*-
+<<<<<<< HEAD
+=======
+import glob
+import json
+import milk
+import os.path
+import shutil
+import tempfile
+>>>>>>> udi/master
 import unittest
 import milk
 
@@ -36,7 +45,6 @@ class Test(unittest.TestCase):
         self.assertEquals(15, len(rows))
         for row in rows:
             self.assertEquals(2, len(row))
-
 
     def test_extract_station_from_row(self):
 
@@ -82,6 +90,39 @@ class Test(unittest.TestCase):
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
 
+<<<<<<< HEAD
+=======
+    def test_save_station_to_file(self):
+        url = milk.get_url(2)
+        html = milk.get_full_html(url)
+        table = milk.extract_stations_table(html)
+        rows = milk.extract_station_rows(table)
+        row = rows[0]
+        station = milk.extract_station_from_row(row)
+        path = tempfile.mkdtemp()
+        try:
+            milk.save_station_to_json_file(path, station)
+            filename = os.path.join(path, "%d.json" % station['id'])
+            self.assertTrue(os.path.exists(filename))
+            with open(filename) as f:
+                self.assertEquals(station, json.load(f))
+        finally:
+            shutil.rmtree(path)
+
+    def test_save_stations_from_page(self):
+        path = tempfile.mkdtemp()
+        try:
+            milk.save_station_from_page(path, 1)
+            files = glob.glob(os.path.join(path, "*.json"))
+            self.assertEquals(15, len(files))
+            for filename in files:
+                with open(filename) as f:
+                    d = json.load(f)
+                    self.assertEquals(os.path.join(path, ".json" % d['id']), filename)
+        finally:
+            shutil.rmtree(path)
+
+>>>>>>> udi/master
 
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testName']
