@@ -41,6 +41,7 @@ class Test(unittest.TestCase):
         for row in rows:
             self.assertEquals(2, len(row))
 
+
     def test_extract_station_from_row(self):
 
         url = milk.get_url(1)
@@ -66,12 +67,12 @@ class Test(unittest.TestCase):
         self.assertEquals(595, station['id'])
         self.assertEquals(u"הר אדר, נטף", station['notes'])
         self.assertEqual(6, len(station['days']))
-        self.assertEqual("8:00-14:30", station['days'][0])
-        self.assertEqual("8:00-14:30", station['days'][1])
-        self.assertEqual("סגור", station['days'][2])
-        self.assertEqual("8:00-14:30", station['days'][3])
-        self.assertEqual("סגור", station['days'][4])
-        self.assertEqual("סגור", station['days'][5])
+        self.assertEqual(u"8:00-14:30", station['days'][0])
+        self.assertEqual(u"8:00-14:30", station['days'][1])
+        self.assertEqual(u"סגור", station['days'][2])
+        self.assertEqual(u"8:00-14:30", station['days'][3])
+        self.assertEqual(u"סגור", station['days'][4])
+        self.assertEqual(u"סגור", station['days'][5])
         self.assertEquals(u"ירושלים", station['district'])
         self.assertEquals(u"ירושלים", station['subdistrict'])
 
