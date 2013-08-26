@@ -25,7 +25,7 @@ def extract_station_rows(table):
     rows = table.xpath('tr')
     duble_rows = rows[1::2]
     odd_rows = rows[2::2]
-    tuple_list = zip(odd_rows,duble_rows)
+    tuple_list = zip(odd_rows, duble_rows)
     return tuple_list
 
 
@@ -35,5 +35,3 @@ def extract_station_from_row(row):
 
 def save_station_to_json_file(path, station):
     pass
-
-
