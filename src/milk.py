@@ -24,8 +24,12 @@ def extract_stations_table(url):
 def extract_station_rows(table):
     pass
 
-    
+
 def extract_station_from_row(row):
+    pass
+
+
+def save_station_to_json_file(path, station):
     pass
 
 
