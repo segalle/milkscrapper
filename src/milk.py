@@ -51,8 +51,9 @@ def extract_station_from_row(row):
 
 def save_station_to_json_file(path, station):
     fullfilepath = os.path.join(path, "%d.json" % station['id'])
-    file = open(fullfilepath, 'w')
-    file.write(json.dumps(station))
+    #file = open(fullfilepath, 'w')
+    with open(fullfilepath, 'w') as file:
+        file.write(json.dumps(station))
     pass
 
 
@@ -62,9 +63,12 @@ def save_station_from_page(path, page):
     table = extract_stations_table(html)
     rows = extract_station_rows(table)
     
-    row = rows[0]
-    save_station_to_jason_file(path,row)
-    
-    
-    return False
+
+    countfiles = 0
+    for row in rows:
+        station = extract_station_from_row(row)
+        save_station_to_json_file(path,station)
+        countfiles +=1
+
+    return countfiles
 

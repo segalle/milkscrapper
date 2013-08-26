@@ -114,7 +114,7 @@ class Test(unittest.TestCase):
             for filename in files:
                 with open(filename) as f:
                     d = json.load(f)
-                    self.assertEquals(os.path.join(path, ".json" % d['id']), filename)
+                    self.assertEquals(os.path.join(path, "%d.json" % d['id']), filename)
         finally:
             shutil.rmtree(path)
 
