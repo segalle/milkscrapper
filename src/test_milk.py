@@ -49,6 +49,7 @@ class Test(unittest.TestCase):
         row = rows[9]
         station = milk.extract_station_from_row(row)
         self.assertIsInstance(station, dict)
+        self.assertEquals(605, station['id'])
         self.assertEquals(u"אבשלום", station['city'])
         self.assertEquals(u"ד.נ. הנגב 85488", station['address'])
         self.assertEquals(u"מרכז אבשלום", station['name'])
@@ -60,6 +61,7 @@ class Test(unittest.TestCase):
         row = rows[0]
         station = milk.extract_station_from_row(row)
         self.assertIsInstance(station, dict)
+        self.assertEquals(595, station['id'])
         self.assertEquals(u"הר אדר, נטף", station['notes'])
         self.assertEqual(6, len(station['days']))
         self.assertEqual("8:00-14:30", station['days'][0])
@@ -78,6 +80,7 @@ class Test(unittest.TestCase):
         row = rows[0]
         station = milk.extract_station_from_row(row)
         self.assertIsInstance(station, dict)
+        self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
 
 
