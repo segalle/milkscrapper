@@ -51,6 +51,19 @@ class Test(unittest.TestCase):
         self.assertEquals(u"ד.נ. הנגב 85488", station['address'])
         self.assertEquals(u"מרכז אבשלום", station['name'])
         self.assertEquals(u"קופת חולים כללית", station['owner'])
+        self.assertEquals(u"", station['notes'])
+
+        row = rows[0]
+        station = milk.extract_station_from_row(row)
+        self.assertIsInstance(station, dict)
+        self.assertEquals(u"הר אדר, נטף", station['notes'])
+        self.assertEqual(6, len(station['days']))
+        self.assertEqual("8:00-14:30", station['days'][0])
+        self.assertEqual("8:00-14:30", station['days'][1])
+        self.assertEqual("סגור", station['days'][2])
+        self.assertEqual("8:00-14:30", station['days'][3])
+        self.assertEqual("סגור", station['days'][4])
+        self.assertEqual("סגור", station['days'][5])
 
 
 if __name__ == "__main__":
