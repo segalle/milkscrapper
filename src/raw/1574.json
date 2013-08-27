@@ -1,0 +1,18 @@
+{
+    "city": "\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1 \u05d9\u05e4\u05d5", 
+    "name": "\u05d1\u05d1\u05dc\u05d9", 
+    "district": "\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1", 
+    "notes": "", 
+    "subdistrict": "\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1", 
+    "days": [
+        "7:00-19:00", 
+        "11:00-19:00", 
+        "7:00-19:00", 
+        "7:00-19:00", 
+        "7:00-19:00", 
+        "8:00-13:00"
+    ], 
+    "address": "\u05d9\u05e8\u05d5\u05e9\u05dc\u05de\u05d9 14", 
+    "owner": "\u05e2\u05d9\u05e8\u05d9\u05d9\u05ea \u05ea\u05dc \u05d0\u05d1\u05d9\u05d1 \u05d9\u05e4\u05d5", 
+    "id": 1574
+}

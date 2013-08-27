@@ -1,0 +1,70 @@
+{
+    "status": "OK", 
+    "results": [
+        {
+            "geometry": {
+                "location_type": "RANGE_INTERPOLATED", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 32.0357436, 
+                        "lng": 34.7499711
+                    }, 
+                    "southwest": {
+                        "lat": 32.0357281, 
+                        "lng": 34.7499686
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 32.0370848302915, 
+                        "lng": 34.7513188302915
+                    }, 
+                    "southwest": {
+                        "lat": 32.0343868697085, 
+                        "lng": 34.7486208697085
+                    }
+                }, 
+                "location": {
+                    "lat": 32.0357281, 
+                    "lng": 34.7499711
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "17", 
+                    "types": [
+                        "street_number"
+                    ], 
+                    "short_name": "17"
+                }, 
+                {
+                    "long_name": "Irit", 
+                    "types": [
+                        "route"
+                    ], 
+                    "short_name": "Irit"
+                }, 
+                {
+                    "long_name": "Tel Aviv", 
+                    "types": [
+                        "locality", 
+                        "political"
+                    ], 
+                    "short_name": "Tel Aviv"
+                }, 
+                {
+                    "long_name": "Israel", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "IL"
+                }
+            ], 
+            "formatted_address": "Irit 17, Tel Aviv, Israel", 
+            "types": [
+                "street_address"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "status": "OK", 
+    "results": [
+        {
+            "geometry": {
+                "location_type": "RANGE_INTERPOLATED", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 31.8802223, 
+                        "lng": 35.239359
+                    }, 
+                    "southwest": {
+                        "lat": 31.8802205, 
+                        "lng": 35.2393407
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 31.8815703802915, 
+                        "lng": 35.2406988302915
+                    }, 
+                    "southwest": {
+                        "lat": 31.8788724197085, 
+                        "lng": 35.2380008697085
+                    }
+                }, 
+                "location": {
+                    "lat": 31.8802223, 
+                    "lng": 35.239359
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "19", 
+                    "types": [
+                        "street_number"
+                    ], 
+                    "short_name": "19"
+                }, 
+                {
+                    "long_name": "Ahavat Emet", 
+                    "types": [
+                        "route"
+                    ], 
+                    "short_name": "Ahavat Emet"
+                }, 
+                {
+                    "long_name": "Kokhav Ya'akov", 
+                    "types": [
+                        "locality", 
+                        "political"
+                    ], 
+                    "short_name": "Kokhav Ya'akov"
+                }
+            ], 
+            "partial_match": true, 
+            "formatted_address": "19 Ahavat Emet, Kokhav Ya'akov", 
+            "types": [
+                "street_address"
+            ]
+        }
+    ]
+}
