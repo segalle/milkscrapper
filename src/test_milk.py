@@ -62,7 +62,7 @@ class Test(unittest.TestCase):
         self.assertEquals(u"קופת חולים כללית", station['owner'])
         self.assertEquals(u"", station['notes'])
         self.assertEquals(u"דרום", station['district'])
-        self.assertEquals(u"", station['subdistrict'])
+        self.assertEquals(u"באר שבע", station['subdistrict'])
 
         row = rows[0]
         station = milk.extract_station_from_row(row)
@@ -96,9 +96,9 @@ class Test(unittest.TestCase):
         row = rows[6]
         station = milk.extract_station_from_row(row)
         self.assertIsInstance(station, dict)
-        self.assertEquals(u"עלי", station['name'])
-        self.assertEquals(u"", station['district'])
-        self.assertEquals(u"", station['subdistrict'])
+        self.assertEquals(u"האורן", station['name'])
+        self.assertEquals(u"ירושלים", station['district'])
+        self.assertEquals(u"ירושלים", station['subdistrict'])
 
     def test_save_station_to_file(self):
         url = milk.get_url(2)
@@ -172,6 +172,19 @@ class Test(unittest.TestCase):
         station = {
                    'city': u'עמיעד',
                    'address': 'ד.נ. שטות',
+                   }
+        result = milk.geocode_station(station)
+        self.assertEquals(result['status'], 'OK')
+        self.assertEquals(expected, result['results'][0]['geometry']['location'])
+
+    def test_geocode_station_english(self):
+        expected = {
+                                'lat': 32.930354,
+                                'lng': 35.54052100000001
+                    }
+        station = {
+                   'city': u'עמיעד',
+                   'address': 'ckv',
                    }
         result = milk.geocode_station(station)
         self.assertEquals(result['status'], 'OK')

@@ -20,8 +20,9 @@ def get_full_html(url):
 
 def extract_stations_table(url):
     html = etree.HTML(url)
-    table = html.xpath('//*[@class="cqwpGridViewTable cqwpGridViewTableFullVaccines PaymentsGridViewGroup"]')[0];
-    return table
+    table = html.xpath('//*[@class="cqwpGridViewTable cqwpGridViewTableFullVaccines PaymentsGridViewGroup"]')
+    
+    return table[0] if table else None
 
 
 def extract_station_rows(table):
@@ -33,11 +34,11 @@ def extract_station_rows(table):
 def extract_station_from_row(row):
     tds = row[0].xpath('td')
     d = {}
-    d['id'] = int(row[0].get("id").rsplit('_',1)[1])
-    d['city'] = tds[0].xpath("string()")
-    d['address'] = tds[1].xpath("string()")
-    d['name'] = tds[2].xpath("string()")
-    d['owner'] = tds[4].xpath("string()")
+    d['id'] = int(row[0].get("id").rsplit('_', 1)[1])
+    d['city'] = tds[0].xpath("string()").strip()
+    d['address'] = tds[1].xpath("string()").strip()
+    d['name'] = tds[2].xpath("string()").strip()
+    d['owner'] = tds[4].xpath("string()").strip()
     d['notes'] = tds[5].xpath("string()").strip()
     d['days'] = [x.xpath("string()").strip() for x in row[1].xpath('.//table')[0].xpath('tr[position() >1 ]/td')[1::2]]
 
@@ -57,7 +58,6 @@ def extract_station_from_row(row):
 
 def save_station_to_json_file(path, station):
     fullfilepath = os.path.join(path, "%d.json" % station['id'])
-    print fullfilepath
     with open(fullfilepath, 'w') as f:
         json.dump(station, f, indent=4)
 
@@ -66,6 +66,8 @@ def save_station_from_page(path, page):
     url = get_url(page)
     html = get_full_html(url)
     table = extract_stations_table(html)
+    if table is None:
+        return 0
     rows = extract_station_rows(table)
     for row in rows:
         station = extract_station_from_row(row)
@@ -75,24 +77,31 @@ def save_station_from_page(path, page):
 
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
-    # TODO: auto stop
     downloaded = 0
     pagenum = 0
-    for page in range(1, 3):
+    while True:
         pagenum += 1
-        print pagenum
-        downloaded += save_station_from_page(path, page)
+        print "downloading page #{0}...".format(pagenum),
+        downloadedTotal = downloaded
+        downloaded += save_station_from_page(path, pagenum)
+        print "{0} stations.".format(downloaded - downloadedTotal) #prints how much was downloaded from page
+        if downloaded == downloadedTotal:
+            print "Done"
+            break
     return downloaded
 
 
-def geocode(location, address):
-    payload = {"components":"locality:{0}".format(location), "address":address, "sensor":"false"}
-    r = requests.get("http://maps.googleapis.com/maps/api/geocode/json",params=payload)
-    #print r.url
+
+def geocode(locality, address):
+    payload = {"components":"locality:{0}".format(locality), "address":address, "sensor":"false"}
+    r = requests.get("http://maps.googleapis.com/maps/api/geocode/json", params=payload)
+    # print r.url
     return r.json()
     
 def geocode_station(station):
-    return geocode(station["city"],station['address'])
+    return geocode(station["city"], station['address'])
+
+
 
 
 #     j = data
@@ -103,6 +112,5 @@ def geocode_station(station):
 #     with open(fullfilepath, 'w') as f:
 #         f.write(json.dumps(l))
 
-# if __name__ == "__main__":
-#     # import sys;sys.argv = ['', 'Test.testName']
-#     unittest.main()
+if __name__ == "__main__":
+    download_all_stations("raw")
