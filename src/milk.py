@@ -126,7 +126,7 @@ def geojson_generator(stations):
             properties_dic["Address"] = x["results"][0]["formatted_address"]
         
             geometry_dic = {}
-            geometry_dic["type"] = "point"
+            geometry_dic["type"] = "Point"
             location = x["results"][0]["geometry"]["location"]
             coordinates = [location["lat"],location["lng"]]            
             geometry_dic["coordinates"] = coordinates
