@@ -92,7 +92,7 @@ def save_station_from_page(path, page):  #includes geo files
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
     downloaded = 0
-    pagenum = 0
+    pagenum = 66
     while True:
         pagenum += 1
         print "downloading page #{0}...".format(pagenum),
@@ -128,10 +128,12 @@ def geojson_generator(stations):
             geometry_dic = {}
             geometry_dic["type"] = "point"
             location = x["results"][0]["geometry"]["location"]
-            geometry_dic["coordinates"] = "{0},{1}".format(location["lat"],location["lng"])
+            coordinates = [location["lat"],location["lng"]]            
+            geometry_dic["coordinates"] = coordinates
             geometry_dic["properties"] = properties_dic
         
             feature_dic ={}
+            feature_dic["properties"] = properties_dic
             feature_dic["type"] = "Feature"
             feature_dic["geometry"] = geometry_dic
             
