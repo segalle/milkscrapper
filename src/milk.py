@@ -85,16 +85,23 @@ def download_all_stations(path):
     return downloaded
 
 
-def address_to_latlong(address, path, station):
-    location_url = "http://maps.googleapis.com/maps/api/geocode/json?address={0}&sensor=false".format(address);
-    data = requests.get(location_url).json()
-    j = data
-    l = json.dumps(j)
+def geocode(location, address):
+    payload = {"components":"locality:{0}".format(location), "address":address, "sensor":"false"}
+    r = requests.get("http://maps.googleapis.com/maps/api/geocode/json",params=payload)
+    #print r.url
+    return r.json()
+    
+def geocode_station(station):
+    return geocode(station["city"],station['address'])
 
-    filename = station["id"]
-    fullfilepath = os.path.join(path, "%sxy.json" % filename)
-    with open(fullfilepath, 'w') as f:
-        f.write(json.dumps(l))
+
+#     j = data
+#     l = json.dumps(j)
+# 
+#     filename = station["id"]
+#     fullfilepath = os.path.join(path, "%sxy.json" % filename)
+#     with open(fullfilepath, 'w') as f:
+#         f.write(json.dumps(l))
 
 # if __name__ == "__main__":
 #     # import sys;sys.argv = ['', 'Test.testName']

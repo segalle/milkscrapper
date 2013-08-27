@@ -131,7 +131,6 @@ class Test(unittest.TestCase):
         finally:
             shutil.rmtree(path)
 
-    @unittest.skip("too long")
     def test_download_all_stations(self):
         path = tempfile.mkdtemp()
         try:
@@ -144,43 +143,38 @@ class Test(unittest.TestCase):
                     self.assertEquals(os.path.join(path, "%d.json" % d['id']),
                                       filename)
         finally:
-            shutil.rmtree(path)
+            pass
+#             shutil.rmtree(path)
 
     def test_geocode_with_address(self):
         expected = {
-                    'location': {
                                 'lat': 31.9032592,
                                 'lng': 35.015447
-                                }
                     }
         result = milk.geocode(u'מודיעין', u'כליל החורש 16')
-        self.assertEquals(expected, result['status'], 'OK')
+        self.assertEquals(result['status'], 'OK')
         self.assertEquals(expected, result['results'][0]['geometry']['location'])
 
     def test_address_to_latlong_without_address(self):
         expected = {
-                    'location': {
                                 'lat': 32.930354,
                                 'lng': 35.54052100000001
-                                }
                     }
         result = milk.geocode(u'עמיעד', u'')
-        self.assertEquals(expected, result['status'], 'OK')
+        self.assertEquals(result['status'], 'OK')
         self.assertEquals(expected, result['results'][0]['geometry']['location'])
 
     def test_geocode_station(self):
         expected = {
-                    'location': {
                                 'lat': 32.930354,
                                 'lng': 35.54052100000001
-                                }
                     }
         station = {
                    'city': u'עמיעד',
                    'address': 'ד.נ. שטות',
                    }
         result = milk.geocode_station(station)
-        self.assertEquals(expected, result['status'], 'OK')
+        self.assertEquals(result['status'], 'OK')
         self.assertEquals(expected, result['results'][0]['geometry']['location'])
 
 
