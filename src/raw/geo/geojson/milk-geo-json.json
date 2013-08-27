@@ -12,7 +12,10 @@
                     35.1182188
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "20 Haran, Beitar Ilit"
+            }
         }, 
         {
             "geometry": {
@@ -25,7 +28,10 @@
                     34.602305
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Or HaNer, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -38,7 +44,10 @@
                     34.8651328
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "David Elazar 21, Or Yehuda, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -51,7 +60,10 @@
                     35.308029
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Itamar"
+            }
         }, 
         {
             "geometry": {
@@ -64,7 +76,10 @@
                     35.032054
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Elkana"
+            }
         }, 
         {
             "geometry": {
@@ -77,7 +92,10 @@
                     35.17451399999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ari'el"
+            }
         }, 
         {
             "geometry": {
@@ -90,7 +108,10 @@
                     35.222734
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit El"
+            }
         }, 
         {
             "geometry": {
@@ -103,7 +124,10 @@
                     35.055913
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaZayit, Beit Arye"
+            }
         }, 
         {
             "geometry": {
@@ -116,7 +140,10 @@
                     35.171852
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "49 Hagai, Giv'at Ze'ev"
+            }
         }, 
         {
             "geometry": {
@@ -129,7 +156,10 @@
                     35.08469
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ginot Shomron, Karnei Shomron"
+            }
         }, 
         {
             "geometry": {
@@ -142,7 +172,10 @@
                     35.076569
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaDolev, Sho'eva, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -155,7 +188,10 @@
                     35.273201
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Har HaBracha"
+            }
         }, 
         {
             "geometry": {
@@ -168,7 +204,10 @@
                     34.316403
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bnei Netsarim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -181,7 +220,10 @@
                     35.1079105
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaPol 17, Abu Ghosh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -194,7 +236,10 @@
                     35.168596
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Abu Snan, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -207,7 +252,10 @@
                     35.168596
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Abu Snan, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -220,7 +268,10 @@
                     35.168596
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Abu Snan, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -233,7 +284,10 @@
                     34.8904227
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaMeyasedim 41, Even Yehuda, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -246,7 +300,10 @@
                     34.885087
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Even Yehuda, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -259,7 +316,10 @@
                     34.762963
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Even Shmuel, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -272,7 +332,10 @@
                     34.3312
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Avshalom, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -285,7 +348,10 @@
                     35.212213
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d7\u05e8\u05d1\u05ea \u05d0\u05d3\u05de\u05d9\u05ea 3, Adamit"
+            }
         }, 
         {
             "geometry": {
@@ -298,7 +364,10 @@
                     35.391943
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Um AlGhanam, Shibli, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -311,7 +380,10 @@
                     35.142063
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ayn Jarar, Umm al-Fahm, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -324,7 +396,10 @@
                     34.622824
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ofakim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -337,7 +412,10 @@
                     34.622824
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ofakim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -350,7 +428,10 @@
                     34.86488569999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ofira 1, Or Yehuda, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -363,7 +444,10 @@
                     34.925589
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaAlon, Or Akiva, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -376,7 +460,10 @@
                     34.920394
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Or Akiva, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -389,7 +476,10 @@
                     34.918493
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Balfour, Or Akiva, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -402,7 +492,10 @@
                     34.524868
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Urim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -415,7 +508,10 @@
                     34.99081
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Oranit"
+            }
         }, 
         {
             "geometry": {
@@ -428,7 +524,10 @@
                     34.99081
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Oranit"
+            }
         }, 
         {
             "geometry": {
@@ -441,7 +540,10 @@
                     35.114584
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Usha, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -454,7 +556,10 @@
                     34.8068745
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Moshe Sharet 73, Azor, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -467,7 +572,10 @@
                     35.3374094
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ahuzat Barak Secretariat, Ahuzat Barak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -480,7 +588,10 @@
                     35.171715
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ahihud, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -493,7 +604,10 @@
                     34.990826
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ahituv, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -506,7 +620,10 @@
                     35.111591
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d0\u05d9\u05d1\u05d8\u05d9\u05df, Ibtin"
+            }
         }, 
         {
             "geometry": {
@@ -519,7 +636,10 @@
                     34.978259
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Eyal, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -532,7 +652,10 @@
                     35.576732
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ayelet HaShahar, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -545,7 +668,10 @@
                     35.219162
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Eilon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -558,7 +684,10 @@
                     34.963023
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Eilot, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -571,7 +700,10 @@
                     35.408188
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ilaniya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -584,7 +716,10 @@
                     34.947069
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Barne'a, Eilat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -597,7 +732,10 @@
                     34.935878
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Zeelim, Eilat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -610,7 +748,10 @@
                     34.921023
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Eilat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -623,7 +764,10 @@
                     35.322258
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Iksal, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -636,7 +780,10 @@
                     35.322258
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Iksal, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -649,7 +796,10 @@
                     34.948716
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "al'Atrash, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -662,7 +812,10 @@
                     34.742872
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Aluma, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -675,7 +828,10 @@
                     35.546088
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alumot, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -688,7 +844,10 @@
                     35.219545
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d0\u05dc\u05d5\u05df \u05d4\u05d2\u05dc\u05d9\u05dc, Alon HaGalil"
+            }
         }, 
         {
             "geometry": {
@@ -701,7 +860,10 @@
                     35.331646
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d0\u05dc\u05d5\u05df \u05de\u05d5\u05e8\u05d4, Elon More"
+            }
         }, 
         {
             "geometry": {
@@ -714,7 +876,10 @@
                     35.125256
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alon Shvut"
+            }
         }, 
         {
             "geometry": {
@@ -727,7 +892,10 @@
                     35.125256
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alon Shvut"
+            }
         }, 
         {
             "geometry": {
@@ -740,7 +908,10 @@
                     35.838507
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alonei Habashan"
+            }
         }, 
         {
             "geometry": {
@@ -753,7 +924,10 @@
                     35.143399
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alonim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -766,7 +940,10 @@
                     34.92507
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Shalom Shabazi 26, Elyakhin, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -779,7 +956,10 @@
                     35.461968
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Almog"
+            }
         }, 
         {
             "geometry": {
@@ -792,7 +972,10 @@
                     34.9498062
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Shamai 4, El'ad, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -805,7 +988,10 @@
                     34.95075
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "El'ad, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -818,7 +1004,10 @@
                     35.014858
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alfei Menashe"
+            }
         }, 
         {
             "geometry": {
@@ -831,7 +1020,10 @@
                     35.014858
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Alfei Menashe"
+            }
         }, 
         {
             "geometry": {
@@ -844,7 +1036,10 @@
                     35.0140438
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "118 Gilboa, Alfei Menashe"
+            }
         }, 
         {
             "geometry": {
@@ -857,7 +1052,10 @@
                     35.326348
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Elkosh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -870,7 +1068,10 @@
                     35.032054
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Elkana"
+            }
         }, 
         {
             "geometry": {
@@ -883,7 +1084,10 @@
                     34.914463
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Amatzia, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -896,7 +1100,10 @@
                     35.12778
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Afek, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -909,7 +1116,10 @@
                     35.149934
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Efrat"
+            }
         }, 
         {
             "geometry": {
@@ -922,7 +1132,10 @@
                     35.149934
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Efrat"
+            }
         }, 
         {
             "geometry": {
@@ -935,7 +1148,10 @@
                     35.149934
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Efrat"
+            }
         }, 
         {
             "geometry": {
@@ -948,7 +1164,10 @@
                     35.486453
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Arbel, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -961,7 +1180,10 @@
                     34.564889
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Erez, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -974,7 +1196,10 @@
                     35.1872407
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "1 HaArava, Ari'el"
+            }
         }, 
         {
             "geometry": {
@@ -987,7 +1212,10 @@
                     35.1872407
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "1 HaArava, Ari'el"
+            }
         }, 
         {
             "geometry": {
@@ -1000,7 +1228,10 @@
                     35.17451399999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ari'el"
+            }
         }, 
         {
             "geometry": {
@@ -1013,7 +1244,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1026,7 +1260,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1039,7 +1276,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1052,7 +1292,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1065,7 +1308,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1078,7 +1324,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1091,7 +1340,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1104,7 +1356,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1117,7 +1372,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1130,7 +1388,10 @@
                     34.655314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashdod, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1143,7 +1404,10 @@
                     34.559464
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1156,7 +1420,10 @@
                     34.559464
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1169,7 +1436,10 @@
                     34.559464
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1182,7 +1452,10 @@
                     34.576964
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Yahadut Britanya, Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1195,7 +1468,10 @@
                     34.583385
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Assaf Haroffe, Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1208,7 +1484,10 @@
                     34.559464
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1221,7 +1500,10 @@
                     34.560505
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hahistadrut, Ashkelon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1234,7 +1516,10 @@
                     34.72557
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Be'er Tuvia, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1247,7 +1532,10 @@
                     34.8373161
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Yehuda 6, Be'er Ya'akov, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1260,7 +1548,10 @@
                     34.8095024
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Wingate 8, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1273,7 +1564,10 @@
                     34.7904054
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Huberman 7, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1286,7 +1580,10 @@
                     34.7878402
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sanhedrin 113, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1299,7 +1596,10 @@
                     34.773988
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Tabenkin, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1312,7 +1612,10 @@
                     34.7725246
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Rahvat Radak 21, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1325,7 +1628,10 @@
                     34.8085068
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bernie 5, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1338,7 +1644,10 @@
                     34.791462
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1351,7 +1660,10 @@
                     34.791533
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Shloshet Bnei Ein Harod, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1364,7 +1676,10 @@
                     34.775267
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sderot Johana Jabotinsky, Beersheba, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1377,7 +1692,10 @@
                     34.98343
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Be'erotayim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1390,7 +1708,10 @@
                     16.8718715
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bari, Italy"
+            }
         }, 
         {
             "geometry": {
@@ -1403,7 +1724,10 @@
                     35.08068799999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bustan HaGalil, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1416,7 +1740,10 @@
                     35.363107
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bu'ayna, Bu'eine Nujeidat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1429,7 +1756,10 @@
                     35.772288
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d1\u05d5\u05e7\u05e2\u05ea\u05d0 1, Buq'ata"
+            }
         }, 
         {
             "geometry": {
@@ -1442,7 +1772,10 @@
                     34.72911
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bitzaron, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1455,7 +1788,10 @@
                     35.214565
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05e6\u05d5\u05de\u05ea \u05d1\u05d9\u05e8 \u05d0\u05dc \u05de\u05db\u05e1\u05d5\u05e8, Bir al-Maksur"
+            }
         }, 
         {
             "geometry": {
@@ -1468,7 +1804,10 @@
                     35.214565
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05e6\u05d5\u05de\u05ea \u05d1\u05d9\u05e8 \u05d0\u05dc \u05de\u05db\u05e1\u05d5\u05e8, Bir al-Maksur"
+            }
         }, 
         {
             "geometry": {
@@ -1481,7 +1820,10 @@
                     35.221508
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Kanfei Nesharim, Beit El"
+            }
         }, 
         {
             "geometry": {
@@ -1494,7 +1836,10 @@
                     35.430499
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Alfa, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1507,7 +1852,10 @@
                     35.430499
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Alfa, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1520,7 +1868,10 @@
                     34.895568
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Guvrin, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1533,7 +1884,10 @@
                     34.8325189
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sderot Menachem Begin 25, Beit Dagan, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1546,7 +1900,10 @@
                     35.144845
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit HaEmek, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1559,7 +1916,10 @@
                     35.43935099999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit HaShita, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1572,7 +1932,10 @@
                     35.161117
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Zayit, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1585,7 +1948,10 @@
                     35.55277299999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Yosef, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1598,7 +1964,10 @@
                     34.873107
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Nir, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1611,7 +1980,10 @@
                     34.762248
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Kama, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1624,7 +1996,10 @@
                     35.327738
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Rimon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1637,7 +2012,10 @@
                     35.4933088
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sha'ul HaMelech 61, Beit She'an, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1650,7 +2028,10 @@
                     35.496156
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Eliyahu, Beit She'an, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1663,7 +2044,10 @@
                     34.9923222
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaGalil 2, Beit Shemesh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1676,7 +2060,10 @@
                     34.9815555
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaNurit 2, Beit Shemesh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1689,7 +2076,10 @@
                     34.9929347
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Nahal Lachish 32, Beit Shemesh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1702,7 +2092,10 @@
                     34.9871261
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Shivtei Israel 2, Beit Shemesh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1715,7 +2108,10 @@
                     34.988099
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Shemesh, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1728,7 +2124,10 @@
                     34.610074
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beit Shikma, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1741,7 +2140,10 @@
                     34.905096
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beitar, Hadera, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1754,7 +2156,10 @@
                     35.118036
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beitar Ilit"
+            }
         }, 
         {
             "geometry": {
@@ -1767,7 +2172,10 @@
                     35.1119205
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "2 Habad, Beitar Ilit"
+            }
         }, 
         {
             "geometry": {
@@ -1780,7 +2188,10 @@
                     35.1077061
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "1 Ismach Israel, Beitar Ilit"
+            }
         }, 
         {
             "geometry": {
@@ -1793,7 +2204,10 @@
                     35.122218
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ben Ami, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1806,7 +2220,10 @@
                     34.8253677
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaRav Herzog 20, Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1819,7 +2236,10 @@
                     34.835226
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1832,7 +2252,10 @@
                     34.841098
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaRav Neufeld 15, Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1845,7 +2268,10 @@
                     34.8390835
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Rav Amram Gaon 4, Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1858,7 +2284,10 @@
                     34.8365277
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Yoel 18, Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1871,7 +2300,10 @@
                     34.8320773
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Derech Ze'ev Jabotinsky 57, Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1884,7 +2316,10 @@
                     34.8327929
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hafes Haim 7, Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1897,7 +2332,10 @@
                     34.835226
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bnei Brak, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1910,7 +2348,10 @@
                     34.6923251
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bnei Darom Secretariat, Bnei Darom, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1923,7 +2364,10 @@
                     35.69107
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bnei Yehuda"
+            }
         }, 
         {
             "geometry": {
@@ -1936,7 +2380,10 @@
                     34.9367673
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Derech HaAtsma'ut 90, Binyamina-Giv'at Ada, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1949,7 +2396,10 @@
                     35.154557
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Basmet Tab'un, Basmat Tab'un, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -1962,7 +2412,10 @@
                     35.27441
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d1\u05e2\u05e0\u05d4 6, Biane"
+            }
         }, 
         {
             "geometry": {
@@ -1975,7 +2428,10 @@
                     34.929786
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d1\u05e7\u05d5\u05e2, Beko'a"
+            }
         }, 
         {
             "geometry": {
@@ -1988,7 +2444,10 @@
                     35.452636
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Beka'ot"
+            }
         }, 
         {
             "geometry": {
@@ -2001,7 +2460,10 @@
                     34.646547
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bror Hayil, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2014,7 +2476,10 @@
                     35.091973
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Barta'a, Basma"
+            }
         }, 
         {
             "geometry": {
@@ -2027,7 +2492,10 @@
                     35.433235
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bar'am, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2040,7 +2508,10 @@
                     35.031044
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Barkai, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2053,7 +2524,10 @@
                     34.7558931
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaMa'apilim 16, Bat Yam, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2066,7 +2540,10 @@
                     34.7419319
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Balfour 152, Bat Yam, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2079,7 +2556,10 @@
                     34.7526262
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaBanim 7, Bat Yam, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2092,7 +2572,10 @@
                     34.7488475
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaNevi'im 1, Bat Yam, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2105,7 +2588,10 @@
                     34.7576846
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaTavor 7, Bat Yam, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2118,7 +2604,10 @@
                     34.7468179
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Kdoshei Kahir 4, Bat Yam, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2131,7 +2620,10 @@
                     35.013729
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Bat Hefer, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2144,7 +2636,10 @@
                     35.14097599999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Judeida Maker, Jadeidi-Makr, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2157,7 +2652,10 @@
                     34.950714
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Jaljulia, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2170,7 +2668,10 @@
                     35.03709200000001
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Tel Gat, Baqa-Jatt, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2183,7 +2684,10 @@
                     35.03709200000001
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Tel Gat, Baqa-Jatt, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2196,7 +2700,10 @@
                     35.03709200000001
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Tel Gat, Baqa-Jatt, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2209,7 +2716,10 @@
                     34.598949
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gevim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2222,7 +2732,10 @@
                     35.37216
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Geva, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2235,7 +2748,10 @@
                     35.436154
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Giv'at Avni, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2248,7 +2764,10 @@
                     35.244822
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Givat Ela, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2261,7 +2780,10 @@
                     34.807673
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d2\u05d1\u05e2\u05ea \u05d1\u05e8\u05e0\u05e8/\u05db\u05d1\u05d9\u05e9 40, Givat Brenner"
+            }
         }, 
         {
             "geometry": {
@@ -2274,7 +2796,10 @@
                     34.920628
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Givat HaShlosha, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2287,7 +2812,10 @@
                     35.1676988
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "48 HaMaccabim, Giv'at Ze'ev"
+            }
         }, 
         {
             "geometry": {
@@ -2300,7 +2828,10 @@
                     35.167509
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaMaccabim, Giv'at Ze'ev"
+            }
         }, 
         {
             "geometry": {
@@ -2313,7 +2844,10 @@
                     35.1432378
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "2 Ha-Ayalot, Giv'at Ze'ev"
+            }
         }, 
         {
             "geometry": {
@@ -2326,7 +2860,10 @@
                     34.932978
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Giv'at Haim Ihud, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2339,7 +2876,10 @@
                     34.929447
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Giv'at Haim Me'uhad Cemetery, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2352,7 +2892,10 @@
                     35.005196
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Rehov Hai, Binyamina-Giv'at Ada, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2365,7 +2908,10 @@
                     35.198004
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Givat Oz, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2378,7 +2924,10 @@
                     34.8469516
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "David Elazar 6, Giv'at Shmuel, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2391,7 +2940,10 @@
                     34.8184752
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Derech Ben Gurion 182, Giv'atayim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2404,7 +2956,10 @@
                     34.8080469
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaMe'orer 24, Giv'atayim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2417,7 +2972,10 @@
                     34.612156
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gvar'am, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2430,7 +2988,10 @@
                     35.213151
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gvat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2443,7 +3004,10 @@
                     35.619547
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gadot"
+            }
         }, 
         {
             "geometry": {
@@ -2456,7 +3020,10 @@
                     34.785101
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gedera, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2469,7 +3036,10 @@
                     34.7775563
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Pines 5, Gedera, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2482,7 +3052,10 @@
                     34.7746263
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Weizman 8, Gedera, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2495,7 +3068,10 @@
                     34.7841821
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sderot Menachem Begin 42, Gedera, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2508,7 +3084,10 @@
                     35.647701
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gonen, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2521,7 +3100,10 @@
                     35.446239
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gazit, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2534,7 +3116,10 @@
                     35.259861
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ginegar, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2547,7 +3132,10 @@
                     34.7079576
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hertsel 42, Gan Yavne, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2560,7 +3148,10 @@
                     34.7051899
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hertsel 41, Gan Yavne, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2573,7 +3164,10 @@
                     34.7140094
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaAtsmaut 8, Gan Yavne, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2586,7 +3180,10 @@
                     35.336254
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gan Ner, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2599,7 +3196,10 @@
                     34.949311
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gan Shmuel, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2612,7 +3212,10 @@
                     35.523152
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ginosar, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2625,7 +3228,10 @@
                     34.824411
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ga'ash, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2638,7 +3244,10 @@
                     35.213831
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ga'aton, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2651,7 +3260,10 @@
                     34.878563
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gefen, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2664,7 +3276,10 @@
                     35.550376
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gesher, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2677,7 +3292,10 @@
                     35.110563
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gesher HaZiv, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2690,7 +3308,10 @@
                     34.794112
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Gat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2703,7 +3324,10 @@
                     35.263853
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dvora, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2716,7 +3340,10 @@
                     35.381713
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d3\u05d1\u05d5\u05e8\u05d9\u05d4, Daburiyya"
+            }
         }, 
         {
             "geometry": {
@@ -2729,7 +3356,10 @@
                     34.825177
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dvir, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2742,7 +3372,10 @@
                     34.923316
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dor, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2755,7 +3388,10 @@
                     34.645725
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dorot, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2768,7 +3404,10 @@
                     35.369229
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d3\u05d9\u05d9\u05e8 \u05d7\u05e0\u05d0, Deir Hanna"
+            }
         }, 
         {
             "geometry": {
@@ -2781,7 +3420,10 @@
                     35.369229
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d3\u05d9\u05d9\u05e8 \u05d7\u05e0\u05d0, Deir Hanna"
+            }
         }, 
         {
             "geometry": {
@@ -2794,7 +3436,10 @@
                     35.026881
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Shiv'at HaMinim, Dimona, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2807,7 +3452,10 @@
                     35.033363
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dimona, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2820,7 +3468,10 @@
                     35.269721
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dayr al'Asad, Deir el-Asad, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2833,7 +3484,10 @@
                     35.269721
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dayr al'Asad, Deir el-Asad, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2846,7 +3500,10 @@
                     35.076965
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dalia, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2859,7 +3516,10 @@
                     35.653953
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dan, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2872,7 +3532,10 @@
                     35.638268
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Dafna, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2885,7 +3548,10 @@
                     35.076793
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Drijat, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2898,7 +3564,10 @@
                     35.623028
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaGoshrim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2911,7 +3580,10 @@
                     34.8911331
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaBanim 14, Hod HaSharon, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2924,7 +3596,10 @@
                     34.901554
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hod HaSharon"
+            }
         }, 
         {
             "geometry": {
@@ -2937,7 +3612,10 @@
                     34.901554
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hod HaSharon"
+            }
         }, 
         {
             "geometry": {
@@ -2950,7 +3628,10 @@
                     34.901554
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hod HaSharon"
+            }
         }, 
         {
             "geometry": {
@@ -2963,7 +3644,10 @@
                     34.639275
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hodaya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2976,7 +3660,10 @@
                     35.29522499999999
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Hoshaya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -2989,7 +3676,10 @@
                     35.1200231
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Ha-Zore'a Secretariat, HaZore'a, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3002,7 +3692,10 @@
                     35.499922
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaZor'im, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3015,7 +3708,10 @@
                     34.957545
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaHotrim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3028,7 +3724,10 @@
                     35.207483
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaYogev, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3041,7 +3740,10 @@
                     34.983146
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaMa'apil, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3054,7 +3756,10 @@
                     35.238022
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaSolelim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3067,7 +3772,10 @@
                     35.133598
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaAlon, Har Adar"
+            }
         }, 
         {
             "geometry": {
@@ -3080,7 +3788,10 @@
                     34.844675
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Herzliya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3093,7 +3804,10 @@
                     34.8398731
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sokolow 10, Herzliya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3106,7 +3820,10 @@
                     34.841322
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Tchernichovsky, Herzliya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3119,7 +3836,10 @@
                     34.8314028
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaNadiv 71, Herzliya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3132,7 +3852,10 @@
                     34.8129966
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Sha'ul HaMelech 3, Herzliya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3145,7 +3868,10 @@
                     34.8419786
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Lenchet 6, Herzliya, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3158,7 +3884,10 @@
                     34.759336
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Zavdiel, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3171,7 +3900,10 @@
                     34.520968
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Zikim, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3184,7 +3916,10 @@
                     34.9494879
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Kdoshei HaShoa 8, Zikhron Ya'akov, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3197,7 +3932,10 @@
                     34.9614314
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Kibuts Galuyot 4, Zikhron Ya'akov, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3210,7 +3948,10 @@
                     35.183497
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "Zalafa, Ma'ale Iron, Israel"
+            }
         }, 
         {
             "geometry": {
@@ -3223,7 +3964,10 @@
                     34.8868778
                 ]
             }, 
-            "type": "Feature"
+            "type": "Feature", 
+            "properties": {
+                "Address": "HaRishonim 5, Hadera, Israel"
+            }
         }
     ]
 }
