@@ -61,8 +61,19 @@ def save_station_to_json_file(path, station):
     with open(fullfilepath, 'w') as f:
         json.dump(station, f, indent=4)
 
+def geocode(locality, address):
+    payload = {"components":"locality:{0}".format(locality), "address":address, "sensor":"false"}
+    r = requests.get("http://maps.googleapis.com/maps/api/geocode/json", params=payload)
+    # print r.url
+    return r.json()
 
-def save_station_from_page(path, page):
+def save_geocode_to_file(path, station):
+    fullfilepath = os.path.join(path, "%d.json" % station['id'])
+    geojason = geocode(station["city"], station['address'])
+    with open(fullfilepath, 'w') as f:
+        json.dump(geojason, f, indent=4)
+
+def save_station_from_page(path, page):  #includes geo files
     url = get_url(page)
     html = get_full_html(url)
     table = extract_stations_table(html)
@@ -72,6 +83,8 @@ def save_station_from_page(path, page):
     for row in rows:
         station = extract_station_from_row(row)
         save_station_to_json_file(path, station)
+        geo_file_path = "{0}\geo".format(path)
+        save_geocode_to_file(geo_file_path, station)
     return len(rows)
 
 
@@ -90,27 +103,9 @@ def download_all_stations(path):
             break
     return downloaded
 
-
-
-def geocode(locality, address):
-    payload = {"components":"locality:{0}".format(locality), "address":address, "sensor":"false"}
-    r = requests.get("http://maps.googleapis.com/maps/api/geocode/json", params=payload)
-    # print r.url
-    return r.json()
-    
 def geocode_station(station):
     return geocode(station["city"], station['address'])
 
-
-
-
-#     j = data
-#     l = json.dumps(j)
-# 
-#     filename = station["id"]
-#     fullfilepath = os.path.join(path, "%sxy.json" % filename)
-#     with open(fullfilepath, 'w') as f:
-#         f.write(json.dumps(l))
 
 if __name__ == "__main__":
     download_all_stations("raw")
