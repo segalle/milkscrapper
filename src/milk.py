@@ -43,11 +43,15 @@ def extract_station_from_row(row):
     d['notes'] = tds[5].xpath("string()").strip()
     d['days'] = [x.xpath("string()").strip() for x in row[1].xpath('.//table')[0].xpath('tr[position() >1 ]/td')[1::2]]
     d['district'] = row[1].xpath('.//table')[1].xpath('tr')[0].xpath('td')[1].xpath("string()").strip()
-    row_subdistrict = row[1].xpath('.//table')[1].xpath('tr')[1]
-    if row_subdistrict.xpath('td')[0].xpath("string()").strip() != u"נפה:":
+    try:
+        row_subdistrict = row[1].xpath('.//table')[1].xpath('tr')[1]
+        if row_subdistrict.xpath('td')[0].xpath("string()").strip() != u"נפה:":
+            d['subdistrict'] = ""
+        else:
+            d['subdistrict'] = row_subdistrict.xpath('td')[1].xpath("string()").strip()
+    except:
         d['subdistrict'] = ""
-    else:
-        d['subdistrict'] = row_subdistrict.xpath('td')[1].xpath("string()").strip()
+    
     return d
 
 def save_station_to_json_file(path, station):
@@ -75,9 +79,12 @@ def save_station_from_page(path, page):
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
     downloaded = 0
+    pagenum = 0
     for page in range(1,69):
-        save_station_from_page(path, page)
-        downloaded += 1
+        pagenum +=1
+        print pagenum
+        downloaded += save_station_from_page(path, page)
+        
     return downloaded
 
 
