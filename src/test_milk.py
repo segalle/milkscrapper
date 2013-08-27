@@ -6,6 +6,7 @@ import os.path
 import shutil
 import tempfile
 import unittest
+from unittest.case import skip
 
 
 class Test(unittest.TestCase):
@@ -88,6 +89,17 @@ class Test(unittest.TestCase):
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
 
+        url = milk.get_url(50)
+        html = milk.get_full_html(url)
+        table = milk.extract_stations_table(html)
+        rows = milk.extract_station_rows(table)
+        row = rows[6]
+        station = milk.extract_station_from_row(row)
+        self.assertIsInstance(station, dict)
+        self.assertEquals(u"עלי", station['name'])
+        self.assertEquals(u"", station['district'])
+        self.assertEquals(u"", station['subdistrict'])
+
     def test_save_station_to_file(self):
         url = milk.get_url(2)
         html = milk.get_full_html(url)
@@ -119,6 +131,7 @@ class Test(unittest.TestCase):
         finally:
             shutil.rmtree(path)
 
+    @unittest.skip("too long")
     def test_download_all_stations(self):
         path = tempfile.mkdtemp()
         try:
@@ -132,6 +145,43 @@ class Test(unittest.TestCase):
                                       filename)
         finally:
             shutil.rmtree(path)
+
+    def test_geocode_with_address(self):
+        expected = {
+                    'location': {
+                                'lat': 31.9032592,
+                                'lng': 35.015447
+                                }
+                    }
+        result = milk.geocode(u'מודיעין', u'כליל החורש 16')
+        self.assertEquals(expected, result['status'], 'OK')
+        self.assertEquals(expected, result['results'][0]['geometry']['location'])
+
+    def test_address_to_latlong_without_address(self):
+        expected = {
+                    'location': {
+                                'lat': 32.930354,
+                                'lng': 35.54052100000001
+                                }
+                    }
+        result = milk.geocode(u'עמיעד', u'')
+        self.assertEquals(expected, result['status'], 'OK')
+        self.assertEquals(expected, result['results'][0]['geometry']['location'])
+
+    def test_geocode_station(self):
+        expected = {
+                    'location': {
+                                'lat': 32.930354,
+                                'lng': 35.54052100000001
+                                }
+                    }
+        station = {
+                   'city': u'עמיעד',
+                   'address': 'ד.נ. שטות',
+                   }
+        result = milk.geocode_station(station)
+        self.assertEquals(expected, result['status'], 'OK')
+        self.assertEquals(expected, result['results'][0]['geometry']['location'])
 
 
 if __name__ == "__main__":
