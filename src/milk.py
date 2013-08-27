@@ -92,7 +92,7 @@ def save_station_from_page(path, page):  #includes geo files
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
     downloaded = 0
-    pagenum = 67
+    pagenum = 0
     while True:
         pagenum += 1
         print "downloading page #{0}...".format(pagenum),
@@ -127,8 +127,9 @@ def create_geojson_feature(geocoding, station):
 
     if geocoding['status'] == u"OK":
             properties_dic={}
-            properties_dic["Address"] = station['address']#geocoding["results"][0]["formatted_address"]
-            properties_dic["name"] = station['city']
+            properties_dic[u"עיר"] = station['city']
+            properties_dic[u"כתובת"] = station['address']
+            properties_dic[u"שם תחנה"] = station['name']
         
             geometry_dic = {}
             geometry_dic["type"] = "Point"
