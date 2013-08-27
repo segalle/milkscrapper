@@ -1,0 +1,148 @@
+{
+    "type": "FeatureCollection", 
+    "features": [
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    34.91933660000001, 
+                    32.2577207
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d4\u05e9\u05e7\u05d3 4"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    34.91933660000001, 
+                    32.2577207
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d4\u05e9\u05e7\u05d3 4"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    34.91846, 
+                    32.256608
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d3.\u05e0 \u05de\u05d2\u05d9\u05d3\u05d5"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    35.302478, 
+                    32.657358
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d0\u05d4\u05d1\u05ea \u05d9\u05e9\u05e8\u05d0\u05dc  \u05db\u05d5\u05db\u05d1 \u05d9\u05e2\u05e7\u05d1"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    35.239359, 
+                    31.8802223
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05ea\u05dc \u05e6\u05d9\u05d5\u05df, \u05d0\u05d4\u05d1\u05ea \u05d0\u05de\u05ea 19/8 \u05d3.\u05e0 \u05de\u05d6\u05e8\u05d7 \u05d1\u05e0\u05d9\u05de\u05d9\u05df"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    35.239097, 
+                    31.880377
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05e6\u05d5\u05de\u05ea \u05e9\u05e2\u05e8 \u05d4\u05d2\u05d5\u05dc\u05df - \u05de\u05e1\u05d3\u05d4"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    35.239097, 
+                    31.880377
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05d0\u05d4\u05d1\u05ea \u05d9\u05e9\u05e8\u05d0\u05dc 2 \u05ea\u05dc \u05e6\u05d9\u05d5\u05df"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    34.858533, 
+                    31.253103
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05e9\u05db\u05d5\u05e0\u05d4 2-  901"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    34.67199799999999, 
+                    31.563416
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05e6\u05d5\u05de\u05ea \u05e9\u05e2\u05e8 \u05d4\u05d2\u05d5\u05dc\u05df - \u05de\u05e1\u05d3\u05d4"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    35.225489, 
+                    32.703801
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    34.675289, 
+                    31.325391
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "Address": "\u05ea\u05e4\u05e8\u05d7"
+            }
+        }
+    ]
+}
