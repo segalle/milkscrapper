@@ -6,6 +6,7 @@ import os.path
 import shutil
 import tempfile
 import unittest
+import milk
 
 
 class Test(unittest.TestCase):
@@ -67,12 +68,12 @@ class Test(unittest.TestCase):
         self.assertEquals(595, station['id'])
         self.assertEquals(u"הר אדר, נטף", station['notes'])
         self.assertEqual(6, len(station['days']))
-        self.assertEqual(u"8:00-14:30", station['days'][0])
-        self.assertEqual(u"8:00-14:30", station['days'][1])
-        self.assertEqual(u"סגור", station['days'][2])
-        self.assertEqual(u"8:00-14:30", station['days'][3])
-        self.assertEqual(u"סגור", station['days'][4])
-        self.assertEqual(u"סגור", station['days'][5])
+        self.assertEqual("8:00-14:30", station['days'][0])
+        self.assertEqual("8:00-14:30", station['days'][1])
+        self.assertEqual("סגור", station['days'][2])
+        self.assertEqual("8:00-14:30", station['days'][3])
+        self.assertEqual("סגור", station['days'][4])
+        self.assertEqual("סגור", station['days'][5])
         self.assertEquals(u"ירושלים", station['district'])
         self.assertEquals(u"ירושלים", station['subdistrict'])
 
@@ -85,6 +86,7 @@ class Test(unittest.TestCase):
         self.assertIsInstance(station, dict)
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
+
 
     def test_save_station_to_file(self):
         url = milk.get_url(2)
@@ -106,13 +108,13 @@ class Test(unittest.TestCase):
     def test_save_stations_from_page(self):
         path = tempfile.mkdtemp()
         try:
-            milk.save_station_from_page(path, 1)
+            count = milk.save_station_from_page(path, 1)
             files = glob.glob(os.path.join(path, "*.json"))
-            self.assertEquals(15, len(files))
+            self.assertEquals(15, count)
             for filename in files:
                 with open(filename) as f:
                     d = json.load(f)
-                    self.assertEquals(os.path.join(path, ".json" % d['id']), filename)
+                    self.assertEquals(os.path.join(path, "%d.json" % d['id']), filename)
         finally:
             shutil.rmtree(path)
 
