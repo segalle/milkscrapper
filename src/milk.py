@@ -92,7 +92,7 @@ def save_station_from_page(path, page):  #includes geo files
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
     downloaded = 0
-    pagenum = 66
+    pagenum = 0
     while True:
         pagenum += 1
         print "downloading page #{0}...".format(pagenum),
@@ -109,44 +109,62 @@ def geocode_station(station):
 
 def retrieve_geodata_from_files(path):
     files = glob.glob(os.path.join(path, "*.json"))
+    stations_geo = []
+    for x, i in enumerate(files):
+        with open(files[x], 'r') as f:
+            stations_geo.append(json.load(f))
+    return stations_geo
+
+def retreive_data_from_files(path):
+    files = glob.glob(os.path.join(path, "*.json"))
     stations = []
     for x, i in enumerate(files):
         with open(files[x], 'r') as f:
             stations.append(json.load(f))
     return stations
 
-def geojson_generator(stations):
-    geocontent = {}
-    lst_types = []
-    non_scrapable = 0
-    
-    for x in stations:
-        if x['status'] == u"OK":
+def create_geojson_feature(geocoding, station):
+
+    if geocoding['status'] == u"OK":
             properties_dic={}
-            properties_dic["Address"] = x["results"][0]["formatted_address"]
+            properties_dic[u"עיר"] = station['city']
+            properties_dic[u"כתובת"] = station['address']
+            properties_dic[u"שם תחנה"] = station['name']
         
             geometry_dic = {}
             geometry_dic["type"] = "Point"
-            location = x["results"][0]["geometry"]["location"]
-            coordinates = [location["lng"],location["lat"]]            
+            location = geocoding["results"][0]["geometry"]["location"]
+            coordinates = [location["lng"],location["lat"]]
             geometry_dic["coordinates"] = coordinates
-        
+
             feature_dic ={}
             feature_dic["properties"] = properties_dic
             feature_dic["type"] = "Feature"
             feature_dic["geometry"] = geometry_dic
             
-            lst_types.append(feature_dic)
-        else:
-            non_scrapable += 1
+            return feature_dic
+    else:
+        return "problem"
     
-    print "no location found for {0} stations".format(non_scrapable)
-
+     
+def geojson_generator(stations_geo, station):
+    print station
+    geocontent = {}
+    lst_types = []
+    non_scrapable = 0
+    
     geocontent["type"] = "FeatureCollection"
     geocontent["features"] = []
+
+    for i, x in enumerate(stations_geo):
+        print station[i]
+        station_dic = create_geojson_feature(x, station[i])
+        if station_dic != "problem":
+            lst_types.append(station_dic)
     geocontent["features"] = lst_types
 
     return geocontent
+    #print "no location found for {0} stations".format(non_scrapable)
 
 
 def save_geojason_to_file(geocontent, path):
@@ -155,12 +173,13 @@ def save_geojason_to_file(geocontent, path):
         json.dump(geocontent, f, indent=4)
 
 def geojson_handler(path):
-    stations = retrieve_geodata_from_files(path)
-    geocontent = geojson_generator(stations)
+    stations_geo = retrieve_geodata_from_files(os.path.join(path,"geo"))
+    stations = retreive_data_from_files(path)
+    geocontent = geojson_generator(stations_geo, stations)
     save_geojason_to_file(geocontent, path)
 
 if __name__ == "__main__":
     download_all_stations("raw")
-    geojson_handler("raw\geo")
+    geojson_handler("raw")
     
     
