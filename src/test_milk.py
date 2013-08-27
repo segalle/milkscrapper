@@ -131,7 +131,16 @@ class Test(unittest.TestCase):
         finally:
             shutil.rmtree(path)
 
-
+    def test_address_to_latlong(self):
+        url = milk.get_url(2)
+        html = milk.get_full_html(url)
+        table = milk.extract_stations_table(html)
+        rows = milk.extract_station_rows(table)
+        row = rows[0]
+        station = milk.extract_station_from_row(row)
+        milk.address_to_latlong(u'כליל החורש 16 מודיעין', "c:\py", station)
+        self.assertEqual(True,True)
+    
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testName']
     unittest.main()

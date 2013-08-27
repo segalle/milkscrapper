@@ -6,8 +6,6 @@ import requests
 from lxml import etree
 import json
 import os
-import tempfile
-import urllib2
 
 
 def get_url(page):
@@ -67,38 +65,36 @@ def save_station_from_page(path, page):
     html = get_full_html(url)
     table = extract_stations_table(html)
     rows = extract_station_rows(table)
-    
     countfiles = 0
     for row in rows:
         station = extract_station_from_row(row)
-        save_station_to_json_file(path,station)
-        countfiles +=1
-
+        save_station_to_json_file(path, station)
+        countfiles += 1
     return countfiles
+
 
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
     downloaded = 0
     pagenum = 0
-    for page in range(1,69):
-        pagenum +=1
+    for page in range(1, 3):
+        pagenum += 1
         print pagenum
         downloaded += save_station_from_page(path, page)
-        
     return downloaded
 
 
-def address_to_latlong (address, path, station_id):
+def address_to_latlong(address, path, station):
     location_url = "http://maps.googleapis.com/maps/api/geocode/json?address={0}&sensor=false".format(address);
-    data = urllib2.urlopen(location_url)
-    
-    j = json.load(data)
+    data = requests.get(location_url).json()
+    j = data
     l = json.dumps(j)
-    
-    lat = j['results'][0]['geometry']['location']['lat']
-    lng = j['results'][0]['geometry']['location']['lng']
-    filename = "{0}lat{1}long{2}".format(station_id,lat,lng)
-    fullfilepath = os.path.join(path, "%s.json" % filename)
-    with open(fullfilepath, 'w') as file:
-        file.write(json.dumps(l))
 
+    filename = station["id"]
+    fullfilepath = os.path.join(path, "%sxy.json" % filename)
+    with open(fullfilepath, 'w') as f:
+        f.write(json.dumps(l))
+
+# if __name__ == "__main__":
+#     # import sys;sys.argv = ['', 'Test.testName']
+#     unittest.main()
