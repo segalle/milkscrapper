@@ -4,9 +4,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Balfour 14, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0676064, 
                     34.7741299
@@ -20,9 +17,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Davidka 18, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0548879, 
                     34.792816
@@ -36,9 +30,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "King George 33, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0720528, 
                     34.7736066
@@ -52,9 +43,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Rishon LeTsiyon 3, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0568502, 
                     34.7815735
@@ -68,9 +56,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "HaKeshet 8, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0427402, 
                     34.7742247
@@ -84,9 +69,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Derech Haim Barlev 195, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0451887, 
                     34.8088532
@@ -100,9 +82,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Shulman 3, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0686339, 
                     34.7971783
@@ -116,9 +95,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tevet 15, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.046408, 
                     34.7907562
@@ -132,9 +108,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "HaArmon 8, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0450578, 
                     34.7507521
@@ -148,9 +121,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Irit 17, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0357281, 
                     34.7499711
@@ -164,9 +134,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Yerushalmi 14, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.0960586, 
                     34.8000699
@@ -180,9 +147,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Philadelphia 6, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.1212659, 
                     34.8405209
@@ -196,9 +160,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Yehuda Burla 27, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.1083313, 
                     34.7905628
@@ -212,9 +173,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Lamdan 20, Tel Aviv, Israel"
-                }, 
                 "coordinates": [
                     32.1194401, 
                     34.82284
@@ -228,9 +186,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tel Yosef, Israel"
-                }, 
                 "coordinates": [
                     32.556704, 
                     35.398914
@@ -244,9 +199,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "HaShaked 4, Tel Mond, Israel"
-                }, 
                 "coordinates": [
                     32.2577207, 
                     34.91933660000001
@@ -260,9 +212,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "HaShaked 4, Tel Mond, Israel"
-                }, 
                 "coordinates": [
                     32.2577207, 
                     34.91933660000001
@@ -276,9 +225,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tel Mond, Israel"
-                }, 
                 "coordinates": [
                     32.256608, 
                     34.91846
@@ -292,9 +238,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tel Adashim, Israel"
-                }, 
                 "coordinates": [
                     32.657358, 
                     35.302478
@@ -308,9 +251,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "19 Ahavat Emet, Kokhav Ya'akov"
-                }, 
                 "coordinates": [
                     31.8802223, 
                     35.239359
@@ -324,9 +264,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tel Tsiyon, Kokhav Ya'akov"
-                }, 
                 "coordinates": [
                     31.880377, 
                     35.239097
@@ -340,9 +277,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tel Tsiyon, Kokhav Ya'akov"
-                }, 
                 "coordinates": [
                     31.880377, 
                     35.239097
@@ -356,9 +290,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "901, Tel as-Sabi, Israel"
-                }, 
                 "coordinates": [
                     31.253103, 
                     34.858533
@@ -372,9 +303,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Tlamim, Israel"
-                }, 
                 "coordinates": [
                     31.563416, 
                     34.67199799999999
@@ -388,9 +316,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "Timrat, Israel"
-                }, 
                 "coordinates": [
                     32.703801, 
                     35.225489
@@ -404,9 +329,6 @@
         {
             "geometry": {
                 "type": "point", 
-                "properties": {
-                    "Address": "\u05ea\u05e4\u05e8\u05d7, Tifrah"
-                }, 
                 "coordinates": [
                     31.325391, 
                     34.675289
