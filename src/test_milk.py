@@ -6,13 +6,13 @@ import os.path
 import shutil
 import tempfile
 import unittest
-import milk
 
 
 class Test(unittest.TestCase):
 
     def test_get_url(self):
-        expected = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=1"
+        expected = "http://www.health.gov.il/Subjects/vaccines/two_drops" \
+                   "/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=1"
 
         self.assertEquals(expected, milk.get_url(1))
 
@@ -30,7 +30,8 @@ class Test(unittest.TestCase):
         table = milk.extract_stations_table(html)
 
         self.assertEquals(table.tag, "table")
-        self.assertEquals(table.get('class'), "cqwpGridViewTable cqwpGridViewTableFullVaccines PaymentsGridViewGroup")
+        self.assertEquals(table.get('class'), "cqwpGridViewTable " \
+                         "cqwpGridViewTableFullVaccines PaymentsGridViewGroup")
 
     def test_get_stations_rows(self):
 
@@ -87,7 +88,6 @@ class Test(unittest.TestCase):
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
 
-
     def test_save_station_to_file(self):
         url = milk.get_url(2)
         html = milk.get_full_html(url)
@@ -114,7 +114,8 @@ class Test(unittest.TestCase):
             for filename in files:
                 with open(filename) as f:
                     d = json.load(f)
-                    self.assertEquals(os.path.join(path, "%d.json" % d['id']), filename)
+                    self.assertEquals(os.path.join(path, "%d.json" % d['id']),
+                                      filename)
         finally:
             shutil.rmtree(path)
 
@@ -127,7 +128,8 @@ class Test(unittest.TestCase):
             for filename in files:
                 with open(filename) as f:
                     d = json.load(f)
-                    self.assertEquals(os.path.join(path, ".json" % d['id']), filename)
+                    self.assertEquals(os.path.join(path, "%d.json" % d['id']),
+                                      filename)
         finally:
             shutil.rmtree(path)
 
