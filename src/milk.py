@@ -91,6 +91,3 @@ def address_to_latlong (address, path, station_id):
     fullfilepath = os.path.join(path, "%s.json" % filename)
     with open(fullfilepath, 'w') as file:
         file.write(json.dumps(l))
-
-def download_all_stations(path):
-    assert False
