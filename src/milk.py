@@ -72,10 +72,13 @@ def save_station_from_page(path, page):
 
     return countfiles
 
-def save_station_from_all_pages(path,maxpages):
+def download_all_stations(path):
     """ max pages = max numner of pages on site"""
-    for page in range(1,maxpages+1):
+    downloaded = 0
+    for page in range(1,69):
         save_station_from_page(path, page)
+        downloaded += 1
+    return downloaded
 
 
 def address_to_latlong (address, path, station_id):
@@ -91,3 +94,4 @@ def address_to_latlong (address, path, station_id):
     fullfilepath = os.path.join(path, "%s.json" % filename)
     with open(fullfilepath, 'w') as file:
         file.write(json.dumps(l))
+
