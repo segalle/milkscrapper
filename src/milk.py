@@ -150,7 +150,7 @@ def geojson_generator(stations):
 
 
 def save_geojason_to_file(geocontent, path):
-    fullfilepath = os.path.join(path,"geojson/", "milk-geo-json.json")
+    fullfilepath = os.path.join(path, "milk.geojson")
     with open(fullfilepath, 'w') as f:
         json.dump(geocontent, f, indent=4)
 
