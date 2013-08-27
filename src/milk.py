@@ -6,6 +6,7 @@ import requests
 from lxml import etree
 import json
 import os
+import glob
 
 
 def get_url(page):
@@ -106,6 +107,59 @@ def download_all_stations(path):
 def geocode_station(station):
     return geocode(station["city"], station['address'])
 
+def retrieve_geodata_from_files(path):
+    files = glob.glob(os.path.join(path, "*.json"))
+    stations = []
+    for x, i in enumerate(files):
+        with open(files[x], 'r') as f:
+            stations.append(json.load(f))
+    return stations
+
+def geojson_generator(stations):
+    geocontent = {}
+    lst_types = []
+    non_scrapable = 0
+    
+    for x in stations:
+        if x['status'] == u"OK":
+            properties_dic={}
+            properties_dic["Address"] = x["results"][0]["formatted_address"]
+        
+            geometry_dic = {}
+            geometry_dic["type"] = "point"
+            location = x["results"][0]["geometry"]["location"]
+            geometry_dic["coordinates"] = "{0},{1}".format(location["lat"],location["lng"])
+            geometry_dic["properties"] = properties_dic
+        
+            feature_dic ={}
+            feature_dic["type"] = "Feature"
+            feature_dic["geometry"] = geometry_dic
+            
+            lst_types.append(feature_dic)
+        else:
+            non_scrapable += 1
+    
+    print "no location found for {0} stations".format(non_scrapable)
+
+    geocontent["type"] = "FeatureCollection"
+    geocontent["features"] = []
+    geocontent["features"] = lst_types
+
+    return geocontent
+
+
+def save_geojason_to_file(geocontent, path):
+    fullfilepath = os.path.join(path,"geojson/", "milk-geo-json.json")
+    with open(fullfilepath, 'w') as f:
+        json.dump(geocontent, f, indent=4)
+
+def geojson_handler(path):
+    stations = retrieve_geodata_from_files(path)
+    geocontent = geojson_generator(stations)
+    save_geojason_to_file(geocontent, path)
 
 if __name__ == "__main__":
     download_all_stations("raw")
+    geojson_handler("raw\geo")
+    
+    
