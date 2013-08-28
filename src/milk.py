@@ -22,7 +22,6 @@ def get_full_html(url):
 def extract_stations_table(url):
     html = etree.HTML(url)
     table = html.xpath('//*[@class="cqwpGridViewTable cqwpGridViewTableFullVaccines PaymentsGridViewGroup"]')
-    
     return table[0] if table else None
 
 
@@ -62,17 +61,20 @@ def save_station_to_json_file(path, station):
     with open(fullfilepath, 'w') as f:
         json.dump(station, f, indent=4)
 
+
 def geocode(locality, address):
-    payload = {"components":"locality:{0}".format(locality), "address":address, "sensor":"false"}
+    payload = {"components": "locality:{0}".format(locality), "address": address, "sensor": "false"}
     r = requests.get("http://maps.googleapis.com/maps/api/geocode/json", params=payload)
     # print r.url
     return r.json()
+
 
 def save_geocode_to_file(path, station):
     fullfilepath = os.path.join(path, "%d.json" % station['id'])
     geojason = geocode(station["city"], station['address'])
     with open(fullfilepath, 'w') as f:
         json.dump(geojason, f, indent=4)
+
 
 def save_station_from_page(path, page):  #includes geo files
     url = get_url(page)
@@ -92,7 +94,7 @@ def save_station_from_page(path, page):  #includes geo files
 def download_all_stations(path):
     """ max pages = max numner of pages on site"""
     downloaded = 0
-    pagenum = 0
+    pagenum = 66
     while True:
         pagenum += 1
         print "downloading page #{0}...".format(pagenum),
@@ -104,8 +106,10 @@ def download_all_stations(path):
             break
     return downloaded
 
+
 def geocode_station(station):
     return geocode(station["city"], station['address'])
+
 
 def retrieve_geodata_from_files(path):
     files = glob.glob(os.path.join(path, "*.json"))
@@ -115,6 +119,7 @@ def retrieve_geodata_from_files(path):
             stations_geo.append(json.load(f))
     return stations_geo
 
+
 def retreive_data_from_files(path):
     files = glob.glob(os.path.join(path, "*.json"))
     stations = []
@@ -123,36 +128,37 @@ def retreive_data_from_files(path):
             stations.append(json.load(f))
     return stations
 
+
 def create_geojson_feature(geocoding, station):
 
     if geocoding['status'] == u"OK":
-            properties_dic={}
-            properties_dic[u"עיר"] = station['city']
-            properties_dic[u"כתובת"] = station['address']
-            properties_dic[u"שם תחנה"] = station['name']
-        
+            properties_dic = {}
+#             properties_dic[u"עיר"] = station['city']
+#             properties_dic[u"כתובת"] = station['address']
+#             properties_dic[u"שם תחנה"] = station['name']
+#             properties_dic[u"שעות פעילות"] = station['days']
+
             geometry_dic = {}
             geometry_dic["type"] = "Point"
             location = geocoding["results"][0]["geometry"]["location"]
-            coordinates = [location["lng"],location["lat"]]
+            coordinates = [location["lng"], location["lat"]]
             geometry_dic["coordinates"] = coordinates
 
-            feature_dic ={}
-            feature_dic["properties"] = properties_dic
+            feature_dic = {}
+            feature_dic["properties"] = station# properties_dic
             feature_dic["type"] = "Feature"
             feature_dic["geometry"] = geometry_dic
-            
+
             return feature_dic
     else:
         return "problem"
-    
-     
+
+
 def geojson_generator(stations_geo, station):
-    print station
     geocontent = {}
     lst_types = []
     non_scrapable = 0
-    
+
     geocontent["type"] = "FeatureCollection"
     geocontent["features"] = []
 
@@ -164,7 +170,6 @@ def geojson_generator(stations_geo, station):
     geocontent["features"] = lst_types
 
     return geocontent
-    #print "no location found for {0} stations".format(non_scrapable)
 
 
 def save_geojason_to_file(geocontent, path):
@@ -181,5 +186,3 @@ def geojson_handler(path):
 if __name__ == "__main__":
     download_all_stations("raw")
     geojson_handler("raw")
-    
-    
