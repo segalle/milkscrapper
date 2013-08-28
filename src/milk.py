@@ -63,7 +63,7 @@ def extract_station_from_row(row):
 
 
 def save_station_to_json_file(path, station):
-    fullfilepath = os.path.join(path, "%d.json" % station['id'])
+    fullfilepath = os.path.join(path, "station_%d.json" % station['id'])
     with open(fullfilepath, 'w') as f:
         json.dump(station, f, indent=4)
 
@@ -76,8 +76,11 @@ def geocode(locality, address):
 
 
 def save_geocode_to_file(path, station):
-    fullfilepath = os.path.join(path, "%d.json" % station['id'])
+    fullfilepath = os.path.join(path, "geodata_{0}.json".format(station['id']))
     geojason = geocode(station["city"], station['address'])
+    if not os.path.exists(path):
+        os.mkdir(path)
+        
     with open(fullfilepath, 'w') as f:
         json.dump(geojason, f, indent=4)
 
@@ -91,12 +94,12 @@ def save_station_from_page(path, pagenum, cache_dir):  #includes geo files
     for row in rows:
         station = extract_station_from_row(row)
         save_station_to_json_file(path, station)
-        geo_file_path = "{0}\geo".format(path)
-        save_geocode_to_file(geo_file_path, station)
+#         geo_file_path = "{0}\geo".format(path)
+#         save_geocode_to_file(geo_file_path, station)
     return len(rows)
 
 
-def download_all_stations(path):
+def download_all_stations(path, cache_dir):
     """ max pages = max numner of pages on site"""
     downloaded = 0
     pagenum = 66
@@ -104,7 +107,7 @@ def download_all_stations(path):
         pagenum += 1
         print "downloading page #{0}...".format(pagenum),
         downloadedTotal = downloaded
-        downloaded += save_station_from_page(path, pagenum)
+        downloaded += save_station_from_page(path, pagenum, cache_dir)
         print "{0} stations.".format(downloaded - downloadedTotal) #prints how much was downloaded from page
         if downloaded == downloadedTotal:
             print "Done"
@@ -117,10 +120,16 @@ def geocode_station(station):
 
 
 def geocode_station_files(stations_path, path):
-    """ Reads station_*.json files from stations_path and creates
-    geodata_*.json files in path with results from the geocoding service """
-    assert False
+    files = glob.glob(os.path.join(path, "station_*.json"))
+    stations = []
+    for x in files:
+        with open(x, 'r') as f:
+            stations.append(json.load(f))
 
+    for s in stations:
+        save_geocode_to_file(path, s)
+
+    return len(stations)
 
 def retrieve_geodata_from_files(path):
     files = glob.glob(os.path.join(path, "*.json"))
