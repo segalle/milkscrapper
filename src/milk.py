@@ -148,6 +148,12 @@ def retreive_data_from_files(path):
             stations.append(json.load(f))
     return stations
 
+def read_data(path):
+    stations = retreive_data_from_files(path)
+    stations_geo = retrieve_geodata_from_files(path)
+
+    tuple_list = zip(stations,stations_geo)
+    print tuple_list
 
 def create_geojson_feature(geocoding, station):
 
