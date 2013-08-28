@@ -48,13 +48,7 @@ class Test(unittest.TestCase):
 
     def test_extract_station_from_row(self):
 
-        self.CACHE_DIR = "cache"
-        html = milk.get_page(1, self.CACHE_DIR)
-        table = milk.extract_stations_table(html)
-        rows = milk.extract_station_rows(table)
-
-        row = rows[9]
-        station = milk.extract_station_from_row(row)
+        station = self.get_a_station(1, 9)
         self.assertIsInstance(station, dict)
         self.assertEquals(605, station['id'])
         self.assertEquals(u"אבשלום", station['city'])
@@ -65,8 +59,7 @@ class Test(unittest.TestCase):
         self.assertEquals(u"דרום", station['district'])
         self.assertEquals(u"באר שבע", station['subdistrict'])
 
-        row = rows[0]
-        station = milk.extract_station_from_row(row)
+        station = self.get_a_station(1, 0)
         self.assertIsInstance(station, dict)
         self.assertEquals(595, station['id'])
         self.assertEquals(u"הר אדר, נטף", station['notes'])
@@ -80,31 +73,26 @@ class Test(unittest.TestCase):
         self.assertEquals(u"ירושלים", station['district'])
         self.assertEquals(u"ירושלים", station['subdistrict'])
 
-        html = milk.get_page(2, self.CACHE_DIR)
-        table = milk.extract_stations_table(html)
-        rows = milk.extract_station_rows(table)
-        row = rows[0]
-        station = milk.extract_station_from_row(row)
+        station = self.get_a_station(2, 0)
         self.assertIsInstance(station, dict)
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
 
-        html = milk.get_page(50, self.CACHE_DIR)
-        table = milk.extract_stations_table(html)
-        rows = milk.extract_station_rows(table)
-        row = rows[6]
-        station = milk.extract_station_from_row(row)
+        station = self.get_a_station(50, 6)
         self.assertIsInstance(station, dict)
         self.assertEquals(u"האורן", station['name'])
         self.assertEquals(u"ירושלים", station['district'])
         self.assertEquals(u"ירושלים", station['subdistrict'])
 
-    def test_save_station_to_file(self):
-        html = milk.get_page(2, self.CACHE_DIR)
+    def get_a_station(self, page=1, index=9):
+        html = milk.get_page(page, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
-        row = rows[0]
-        station = milk.extract_station_from_row(row)
+        station = milk.extract_station_from_row(rows[index])
+        return station
+
+    def test_save_station_to_file(self):
+        station = self.get_a_station()
         path = tempfile.mkdtemp()
         try:
             milk.save_station_to_json_file(path, station)
@@ -187,6 +175,28 @@ class Test(unittest.TestCase):
         self.assertEquals(result['status'], 'OK')
         self.assertEquals(expected, result['results'][0]['geometry']['location'])
 
+    def test_geocode_all_stations(self):
+        path = tempfile.mkdtemp()
+        try:
+            station_count = milk.save_station_from_page(path, 1, self.CACHE_DIR)
+            count = milk.geocode_station_files(self.CACHE_DIR, path)
+            self.assertEquals(station_count, count)
+            files = glob.glob(os.path.join(path, "geodata_*.json"))
+            self.assertEquals(station_count, len(files))
+            for filename in files:
+                with open(filename) as f:
+                    d = json.load(f)
+                    self.assertIsInstance(d, dict)
+                    self.assertIn(d, 'status')
+        finally:
+            shutil.rmtree(path)
+
+    def test_create_geojson_feature(self):
+        station = self.get_a_station()
+        geodata = milk.geocode_station(station)
+        feature = milk.create_geojson_feature(geodata, station)
+        self.assertIsInstance(feature, dict)
+        self.assertIn(feature, 'type')
 
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testName']
