@@ -8,16 +8,6 @@ import json
 import os
 import glob
 
-
-# def get_url(page):
-#     url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % page
-#     return url
-# 
-# 
-# def get_full_html(url):
-#     html = requests.get(url)
-#     return html.text
-
 def get_page(pagenum, path):
     url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % pagenum
     fullpath = os.path.join(path, "page_%d.html" % pagenum)
