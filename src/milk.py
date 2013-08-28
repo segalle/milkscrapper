@@ -69,7 +69,7 @@ def save_station_to_json_file(path, station):
 
 
 def geocode(locality, address):
-    payload = {"components": "locality:{0}".format(locality), "address": address, "sensor": "false"}
+    payload = {"components": u"locality:{0} ישראל".format(locality), "address": address, "sensor": "false"}
     r = requests.get("http://maps.googleapis.com/maps/api/geocode/json", params=payload)
     # print r.url
     return r.json()
