@@ -8,6 +8,7 @@ import json
 import os
 import glob
 
+
 def get_page(pagenum, path):
     url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % pagenum
     fullpath = os.path.join(path, "page_%d.html" % pagenum)
@@ -16,10 +17,13 @@ def get_page(pagenum, path):
             return f.read()
 
     html = requests.get(url)
-    with open(fullpath, 'w') as f:
-        f.write(html.text)
+    if os.path.exists(path):
+        with open(fullpath, 'w') as f:
+            f.write(html.text)
+    else:
+        os.makedirs(path)
     return html.text
-    
+
 
 def extract_stations_table(url):
     html = etree.HTML(url)
@@ -78,9 +82,8 @@ def save_geocode_to_file(path, station):
         json.dump(geojason, f, indent=4)
 
 
-def save_station_from_page(page):  #includes geo files
-    url = get_url(page)
-    html = get_full_html(url)
+def save_station_from_page(path, pagenum, cache_dir):  #includes geo files
+    html = get_page(pagenum, cache_dir)
     table = extract_stations_table(html)
     if table is None:
         return 0
