@@ -9,15 +9,27 @@ import os
 import glob
 
 
-def get_url(page):
-    url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % page
-    return url
+# def get_url(page):
+#     url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % page
+#     return url
+# 
+# 
+# def get_full_html(url):
+#     html = requests.get(url)
+#     return html.text
 
+def get_page(pagenum, path):
+    url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % pagenum
+    fullpath = os.path.join(path, "page_%d.html" % pagenum)
+    if os.path.exists(fullpath):
+        with open(fullpath, 'r') as f:
+            return f.read()
 
-def get_full_html(url):
     html = requests.get(url)
+    with open(fullpath, 'w') as f:
+        f.write(html.text)
     return html.text
-
+    
 
 def extract_stations_table(url):
     html = etree.HTML(url)
