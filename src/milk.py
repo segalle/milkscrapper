@@ -186,3 +186,9 @@ def geojson_handler(path):
 if __name__ == "__main__":
     download_all_stations("raw")
     geojson_handler("raw")
+
+
+def get_page(page, path):
+    pass
+
+

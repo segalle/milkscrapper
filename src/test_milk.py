@@ -11,23 +11,25 @@ from unittest.case import skip
 
 class Test(unittest.TestCase):
 
-    def test_get_url(self):
-        expected = "http://www.health.gov.il/Subjects/vaccines/two_drops" \
-                   "/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=1"
+    CACHE_DIR = "cache"
 
-        self.assertEquals(expected, milk.get_url(1))
+    def test_get_page(self):
 
-    def test_get_full_html(self):
+        path = tempfile.mkdtemp()
+        try:
+            html1 = milk.get_page(1, path)
+            self.assertIn("zebraPhone", html1)
+            self.assertTrue(os.path.exists(os.path.join(path, "page_1.html")))
 
-        url = milk.get_url(1)
-        html = milk.get_full_html(url)
-
-        self.assertIn("zebraPhone", html)
+            # Get from cache, result must be identical.
+            html2 = milk.get_page(1, path)
+            self.assertEquals(html1, html2)
+        finally:
+            shutil.rmtree(path)
 
     def test_get_stations_table(self):
 
-        url = milk.get_url(1)
-        html = milk.get_full_html(url)
+        html = milk.get_page(1, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
 
         self.assertEquals(table.tag, "table")
@@ -36,8 +38,7 @@ class Test(unittest.TestCase):
 
     def test_get_stations_rows(self):
 
-        url = milk.get_url(1)
-        html = milk.get_full_html(url)
+        html = milk.get_page(1, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
 
@@ -47,8 +48,8 @@ class Test(unittest.TestCase):
 
     def test_extract_station_from_row(self):
 
-        url = milk.get_url(1)
-        html = milk.get_full_html(url)
+        self.CACHE_DIR = "cache"
+        html = milk.get_page(1, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
 
@@ -79,8 +80,7 @@ class Test(unittest.TestCase):
         self.assertEquals(u"ירושלים", station['district'])
         self.assertEquals(u"ירושלים", station['subdistrict'])
 
-        url = milk.get_url(2)
-        html = milk.get_full_html(url)
+        html = milk.get_page(2, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
         row = rows[0]
@@ -89,8 +89,7 @@ class Test(unittest.TestCase):
         self.assertEquals(611, station['id'])
         self.assertEquals(u"אום אלפחם ב", station['name'])
 
-        url = milk.get_url(50)
-        html = milk.get_full_html(url)
+        html = milk.get_page(50, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
         row = rows[6]
@@ -101,8 +100,7 @@ class Test(unittest.TestCase):
         self.assertEquals(u"ירושלים", station['subdistrict'])
 
     def test_save_station_to_file(self):
-        url = milk.get_url(2)
-        html = milk.get_full_html(url)
+        html = milk.get_page(2, self.CACHE_DIR)
         table = milk.extract_stations_table(html)
         rows = milk.extract_station_rows(table)
         row = rows[0]
@@ -120,13 +118,13 @@ class Test(unittest.TestCase):
     def test_save_stations_from_page(self):
         path = tempfile.mkdtemp()
         try:
-            count = milk.save_station_from_page(path, 1)
-            files = glob.glob(os.path.join(path, "*.json"))
+            count = milk.save_station_from_page(path, 1, self.CACHE_DIR)
+            files = glob.glob(os.path.join(path, "station_*.json"))
             self.assertEquals(15, count)
             for filename in files:
                 with open(filename) as f:
                     d = json.load(f)
-                    self.assertEquals(os.path.join(path, "%d.json" % d['id']),
+                    self.assertEquals(os.path.join(path, "station_%d.json" % d['id']),
                                       filename)
         finally:
             shutil.rmtree(path)
@@ -134,17 +132,16 @@ class Test(unittest.TestCase):
     def test_download_all_stations(self):
         path = tempfile.mkdtemp()
         try:
-            stations = milk.download_all_stations(path)
-            files = glob.glob(os.path.join(path, "*.json"))
+            stations = milk.download_all_stations(path, self.CACHE_DIR)
+            files = glob.glob(os.path.join(path, "station_*.json"))
             self.assertEquals(stations, len(files))
             for filename in files:
                 with open(filename) as f:
                     d = json.load(f)
-                    self.assertEquals(os.path.join(path, "%d.json" % d['id']),
+                    self.assertEquals(os.path.join(path, "station_%d.json" % d['id']),
                                       filename)
         finally:
-            pass
-#             shutil.rmtree(path)
+            shutil.rmtree(path)
 
     def test_geocode_with_address(self):
         expected = {
