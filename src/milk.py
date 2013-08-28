@@ -76,7 +76,7 @@ def save_geocode_to_file(path, station):
         json.dump(geojason, f, indent=4)
 
 
-def save_station_from_page(path, page):  #includes geo files
+def save_station_from_page(page):  #includes geo files
     url = get_url(page)
     html = get_full_html(url)
     table = extract_stations_table(html)
@@ -109,6 +109,12 @@ def download_all_stations(path):
 
 def geocode_station(station):
     return geocode(station["city"], station['address'])
+
+
+def geocode_station_files(stations_path, path):
+    """ Reads station_*.json files from stations_path and creates
+    geodata_*.json files in path with results from the geocoding service """
+    assert False
 
 
 def retrieve_geodata_from_files(path):
@@ -187,8 +193,5 @@ if __name__ == "__main__":
     download_all_stations("raw")
     geojson_handler("raw")
 
-
-def get_page(page, path):
-    pass
 
 
