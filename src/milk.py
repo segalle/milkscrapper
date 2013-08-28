@@ -100,9 +100,8 @@ def save_station_from_page(path, pagenum, cache_dir):  #includes geo files
 
 
 def download_all_stations(path, cache_dir):
-    """ max pages = max numner of pages on site"""
     downloaded = 0
-    pagenum = 66
+    pagenum = 0
     while True:
         pagenum += 1
         print "downloading page #{0}...".format(pagenum),
@@ -131,38 +130,25 @@ def geocode_station_files(stations_path, path):
 
     return len(stations)
 
-def retrieve_geodata_from_files(path):
-    files = glob.glob(os.path.join(path, "*.json"))
-    stations_geo = []
-    for x, i in enumerate(files):
-        with open(files[x], 'r') as f:
-            stations_geo.append(json.load(f))
-    return stations_geo
+def create_tuple_list(path):
+    tuples_full = []
+    station_file_names = glob.glob(os.path.join(path, "station_*.json"))
+    for filename in station_file_names:
+        geo_file_name = filename.replace("station","geodata")
+        if os.path.exists(geo_file_name):
+            with open(filename, 'r') as f:
+                station_content = json.load(f)
+            with open(geo_file_name, 'r') as f_geo:
+                geo_content = json.load(f_geo)
+            
+            tuples_full.append((geo_content,station_content))
+    return tuples_full
 
-
-def retreive_data_from_files(path):
-    files = glob.glob(os.path.join(path, "*.json"))
-    stations = []
-    for x, i in enumerate(files):
-        with open(files[x], 'r') as f:
-            stations.append(json.load(f))
-    return stations
-
-def read_data(path):
-    stations = retreive_data_from_files(path)
-    stations_geo = retrieve_geodata_from_files(path)
-
-    tuple_list = zip(stations,stations_geo)
-    print tuple_list
 
 def create_geojson_feature(geocoding, station):
 
     if geocoding['status'] == u"OK":
             properties_dic = {}
-#             properties_dic[u"עיר"] = station['city']
-#             properties_dic[u"כתובת"] = station['address']
-#             properties_dic[u"שם תחנה"] = station['name']
-#             properties_dic[u"שעות פעילות"] = station['days']
 
             geometry_dic = {}
             geometry_dic["type"] = "Point"
@@ -180,7 +166,7 @@ def create_geojson_feature(geocoding, station):
         return "problem"
 
 
-def geojson_generator(stations_geo, station):
+def geojson_generator(full_tuple_lst):
     geocontent = {}
     lst_types = []
     non_scrapable = 0
@@ -188,30 +174,27 @@ def geojson_generator(stations_geo, station):
     geocontent["type"] = "FeatureCollection"
     geocontent["features"] = []
 
-    for i, x in enumerate(stations_geo):
-        print station[i]
-        station_dic = create_geojson_feature(x, station[i])
-        if station_dic != "problem":
-            lst_types.append(station_dic)
+    print full_tuple_lst
+    for station, geodata in full_tuple_lst: #station_geo
+        print station
+        feature = create_geojson_feature(station, geodata)
+        if feature != "problem":
+            lst_types.append(feature)
     geocontent["features"] = lst_types
 
     return geocontent
 
 
-def save_geojason_to_file(geocontent, path):
-    fullfilepath = os.path.join(path, "milk.geojson")
-    with open(fullfilepath, 'w') as f:
+
+def geojson_handler(path, target):
+    geocontent = geojson_generator(create_tuple_list(path))
+    with open(target, 'w') as f:
         json.dump(geocontent, f, indent=4)
 
-def geojson_handler(path):
-    stations_geo = retrieve_geodata_from_files(os.path.join(path,"geo"))
-    stations = retreive_data_from_files(path)
-    geocontent = geojson_generator(stations_geo, stations)
-    save_geojason_to_file(geocontent, path)
-
 if __name__ == "__main__":
-    download_all_stations("raw")
-    geojson_handler("raw")
+    download_all_stations("cache","cache")
+    geocode_station_files("cache", "cache")
+    geojson_handler("cache", "milk.geojson")
 
 
 
