@@ -75,16 +75,6 @@ def geocode(locality, address):
     return r.json()
 
 
-def save_geocode_to_file(path, station):
-    fullfilepath = os.path.join(path, "geodata_{0}.json".format(station['id']))
-    geojason = geocode(station["city"], station['address'])
-    if not os.path.exists(path):
-        os.mkdir(path)
-        
-    with open(fullfilepath, 'w') as f:
-        json.dump(geojason, f, indent=4)
-
-
 def save_station_from_page(path, pagenum, cache_dir):  #includes geo files
     html = get_page(pagenum, cache_dir)
     table = extract_stations_table(html)
@@ -109,8 +99,10 @@ def download_all_stations(path, cache_dir):
         downloaded += save_station_from_page(path, pagenum, cache_dir)
         print "{0} stations.".format(downloaded - downloadedTotal) #prints how much was downloaded from page
         if downloaded == downloadedTotal:
-            print "Done"
             break
+
+    print "Downloading completed."
+
     return downloaded
 
 
@@ -118,17 +110,34 @@ def geocode_station(station):
     return geocode(station["city"], station['address'])
 
 
+def save_geocode_to_file(fullfilepath, station):
+    geojson = geocode(station["city"], station['address'])
+    if not os.path.exists(os.path.dirname(fullfilepath)):
+        os.mkdir(os.path.dirname(fullfilepath))
+
+    with open(fullfilepath, 'w') as f:
+        json.dump(geojson, f, indent=4)
+        
+    return geojson
+
+
 def geocode_station_files(stations_path, path):
-    files = glob.glob(os.path.join(path, "station_*.json"))
-    stations = []
+    files = glob.glob(os.path.join(stations_path, "station_*.json"))
+    n = 0
     for x in files:
-        with open(x, 'r') as f:
-            stations.append(json.load(f))
+        station_id = x.split('.')[-2].split('_')[-1]
+        print "Geocoding station #{0}...".format(station_id),
+        fullfilepath = os.path.join(path, "geodata_{0}.json".format(station_id))
+        if not os.path.exists(fullfilepath):
+            with open(x, 'r') as f:
+                result = save_geocode_to_file(fullfilepath, json.load(f))
+            print result['status']
+        else:
+            print "Skipped"
+        n += 1
 
-    for s in stations:
-        save_geocode_to_file(path, s)
+    return n
 
-    return len(stations)
 
 def create_tuple_list(path):
     tuples_full = []
@@ -174,16 +183,13 @@ def geojson_generator(full_tuple_lst):
     geocontent["type"] = "FeatureCollection"
     geocontent["features"] = []
 
-    print full_tuple_lst
     for station, geodata in full_tuple_lst: #station_geo
-        print station
         feature = create_geojson_feature(station, geodata)
         if feature != "problem":
             lst_types.append(feature)
     geocontent["features"] = lst_types
 
     return geocontent
-
 
 
 def geojson_handler(path, target):
@@ -195,6 +201,6 @@ if __name__ == "__main__":
     download_all_stations("cache","cache")
     geocode_station_files("cache", "cache")
     geojson_handler("cache", "milk.geojson")
-
+    print "Done"
 
 
