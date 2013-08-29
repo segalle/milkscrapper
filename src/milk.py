@@ -8,7 +8,7 @@ import json
 import os
 import glob
 
-
+ 
 def get_page(pagenum, path):
     url = "http://www.health.gov.il/Subjects/vaccines/two_drops/Pages/Vaccination_centers.aspx?WPID=WPQ8&PN=%d" % pagenum
     fullpath = os.path.join(path, "page_%d.html" % pagenum)
@@ -44,6 +44,7 @@ def extract_station_from_row(row):
     d['city'] = tds[0].xpath("string()").strip()
     d['address'] = tds[1].xpath("string()").strip()
     d['name'] = tds[2].xpath("string()").strip()
+    d['phones'] = tds[3].xpath("string()").strip()
     d['owner'] = tds[4].xpath("string()").strip()
     d['notes'] = tds[5].xpath("string()").strip()
     d['days'] = [x.xpath("string()").strip() for x in row[1].xpath('.//table')[0].xpath('tr[position() >1 ]/td')[1::2]]
@@ -69,7 +70,7 @@ def save_station_to_json_file(path, station):
 
 
 def geocode(locality, address):
-    payload = {"components": u"locality:{0} ישראל".format(locality), "address": address, "sensor": "false"}
+    payload = {"components": u"locality:{0}".format(locality), "address": address, "sensor": "false"}
     r = requests.get("http://maps.googleapis.com/maps/api/geocode/json", params=payload)
     # print r.url
     return r.json()
