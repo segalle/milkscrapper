@@ -125,7 +125,7 @@ def create_full_json_for_stations(stations_path, json_full_path):
 def create_marker_from_station(station):
     d = {}
     d["id"] = station["id"]
-    if station["city"] != station["address"]:
+    if station["city"] == station["address"]:
         d["address"] = ""
     else:
         d["address"] = station["address"]
@@ -242,11 +242,11 @@ def geojson_handler(path, target):
         json.dump(geocontent, f, indent=4)
 
 if __name__ == "__main__":
-    download_all_stations("cache","cache")
-    geocode_station_files("cache", "cache")
-    geojson_handler("cache", "milk.geojson")
+    download_all_stations("cache", "cache")
     create_full_json_for_stations("cache", "allstations.json")
     create_markers_json("cache", "markers.json")
+#     geocode_station_files("cache", "cache")
+#     geojson_handler("cache", "milk.geojson")
     print "Done"
 
 
