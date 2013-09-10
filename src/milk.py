@@ -76,7 +76,7 @@ def geocode(locality, address):
     return r.json()
 
 
-def save_station_from_page(path, pagenum, cache_dir):  #includes geo files
+def save_station_from_page(path, pagenum, cache_dir):  # includes geo files
     html = get_page(pagenum, cache_dir)
     table = extract_stations_table(html)
     if table is None:
@@ -98,7 +98,7 @@ def download_all_stations(path, cache_dir):
         print "downloading page #{0}...".format(pagenum),
         downloadedTotal = downloaded
         downloaded += save_station_from_page(path, pagenum, cache_dir)
-        print "{0} stations.".format(downloaded - downloadedTotal) #prints how much was downloaded from page
+        print "{0} stations.".format(downloaded - downloadedTotal)  # prints how much was downloaded from page
         if downloaded == downloadedTotal:
             break
 
@@ -107,6 +107,49 @@ def download_all_stations(path, cache_dir):
     return downloaded
 
 
+# function for placemarkr app use
+def create_full_json_for_stations(stations_path, json_full_path):
+    files = glob.glob(os.path.join(stations_path, "station_*.json"))
+    all_stations = []
+    for x in files:
+        with open(x, 'r') as f:
+            station_content = json.load(f)
+        all_stations.append(station_content)
+    with open(json_full_path, 'w') as f:
+        json.dump(all_stations, f, indent=4)
+    print "json generate completed successfull"
+
+
+# function for placemarkr app use
+
+def create_marker_from_station(station):
+    d = {}
+    d["id"] = station["id"]
+    if station["city"] != station["address"]:
+        d["address"] = ""
+    else:
+        d["address"] = station["address"]
+    d["city"] = station["city"]
+    return d
+
+
+def create_markers_json(stations_path, json_full_path):
+    
+    files = glob.glob(os.path.join(stations_path, "station_*.json"))
+    
+    all_stations = []
+    
+    for x in files:
+        with open(x, 'r') as f:
+            station = json.load(f)
+        all_stations.append(create_marker_from_station(station))
+    
+    with open(json_full_path, 'w') as f:
+        json.dump(all_stations, f, indent=4)
+    
+    print "json generate completed successfull"
+    
+    
 def geocode_station(station):
     return geocode(station["city"], station['address'])
 
@@ -144,14 +187,14 @@ def create_tuple_list(path):
     tuples_full = []
     station_file_names = glob.glob(os.path.join(path, "station_*.json"))
     for filename in station_file_names:
-        geo_file_name = filename.replace("station","geodata")
+        geo_file_name = filename.replace("station", "geodata")
         if os.path.exists(geo_file_name):
             with open(filename, 'r') as f:
                 station_content = json.load(f)
             with open(geo_file_name, 'r') as f_geo:
                 geo_content = json.load(f_geo)
             
-            tuples_full.append((geo_content,station_content))
+            tuples_full.append((geo_content, station_content))
     return tuples_full
 
 
@@ -167,7 +210,7 @@ def create_geojson_feature(geocoding, station):
             geometry_dic["coordinates"] = coordinates
 
             feature_dic = {}
-            feature_dic["properties"] = station# properties_dic
+            feature_dic["properties"] = station  # properties_dic
             feature_dic["type"] = "Feature"
             feature_dic["geometry"] = geometry_dic
 
@@ -184,7 +227,7 @@ def geojson_generator(full_tuple_lst):
     geocontent["type"] = "FeatureCollection"
     geocontent["features"] = []
 
-    for station, geodata in full_tuple_lst: #station_geo
+    for station, geodata in full_tuple_lst:  # station_geo
         feature = create_geojson_feature(station, geodata)
         if feature != "problem":
             lst_types.append(feature)
@@ -202,6 +245,8 @@ if __name__ == "__main__":
     download_all_stations("cache","cache")
     geocode_station_files("cache", "cache")
     geojson_handler("cache", "milk.geojson")
+    create_full_json_for_stations("cache", "allstations.json")
+    create_markers_json("cache", "markers.json")
     print "Done"
 
 
